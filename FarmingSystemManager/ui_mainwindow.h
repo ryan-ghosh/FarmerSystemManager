@@ -64,6 +64,7 @@ public:
         QFont font1;
         font1.setPointSize(8);
         calendarWidget->setFont(font1);
+        calendarWidget->setCursor(QCursor(Qt::ArrowCursor));
         calendarWidget->setGridVisible(false);
         label = new QLabel(tab);
         label->setObjectName(QString::fromUtf8("label"));

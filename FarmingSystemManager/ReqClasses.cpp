@@ -40,6 +40,19 @@ public:
 
 };
 
+class Employee{
+public:
+    string name;
+    int salary;
+    int sickdays;
+    int deductions; //tax, late, missed over sick days
+
+    Employee(string a, int s){
+        name = a;
+        salary = s;
+    }
+};
+
 class PayRollSystem{
 public:
     int money;
@@ -53,19 +66,6 @@ public:
         for(Employee i : employees){
             money -= i.salary + i.deductions;
         }
-    }
-};
-
-class Employee{
-public:
-    string name;
-    int salary;
-    int sickdays;
-    int deductions; //tax, late, missed over sick days
-
-    Employee(string a, int s){
-        name = a;
-        salary = s;
     }
 };
 
