@@ -76,10 +76,7 @@ public:
     int sickdays;
     float deductions; //tax, late, missed over sick days
 
-    Employee(string a, int s){
-        name = a;
-        salary = s;
-    }
+    Employee(string a, int s) : name(a) , salary(s){}
 
     void employeeDeductions(float incomeTax, float federalTax){
         float first = (1-incomeTax)*salary;
