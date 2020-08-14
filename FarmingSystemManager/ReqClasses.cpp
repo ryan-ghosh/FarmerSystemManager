@@ -124,7 +124,7 @@ class TaskManager{
     void finishTask(string title){
         for (Task c : tasks){
             if(c.task==title){
-                c.isDone==true;
+                c.isDone=true;
             }
         }
     }
