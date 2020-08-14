@@ -38,10 +38,13 @@ public:
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         label = new QLabel(centralwidget);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(310, 250, 111, 26));
+        label->setGeometry(QRect(310, 240, 121, 51));
+        label->setWordWrap(true);
         pushButton = new QPushButton(centralwidget);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
         pushButton->setGeometry(QRect(320, 310, 93, 28));
+        pushButton->setCheckable(false);
+        pushButton->setChecked(false);
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
