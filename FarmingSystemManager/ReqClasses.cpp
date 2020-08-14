@@ -79,8 +79,8 @@ public:
     Employee(string a, int s) : name(a) , salary(s){}
 
     void employeeDeductions(float incomeTax, float federalTax){
-        float first = (1-incomeTax)*salary;
-        float second = (1-federalTax)*salary;
+        float first = incomeTax*salary;
+        float second = federalTax*salary;
         deductions = salary - first - second;
     }
 };
