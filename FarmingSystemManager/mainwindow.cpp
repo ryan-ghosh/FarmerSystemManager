@@ -1,17 +1,16 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QTabWidget>
+#include <iostream>
 
 int k = 0;
 
-MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent)
-    , ui(new Ui::MainWindow)
+MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
     createTabMenu();
 
-    connect(ui->pushButton, SIGNAL(clicked(bool)), this, SLOT(on_pushButton_clicked()));
+    //connect(ui->pushButton, SIGNAL(clicked(bool)), this, SLOT(on_pushButton_clicked()));
     textdisp();
 }
 
@@ -32,6 +31,7 @@ void MainWindow::textdisp(){
 
 void MainWindow::on_pushButton_clicked()
 {
-    ++k;
+    k++;
+    std::cout << k << std::endl;
     textdisp();
 }
