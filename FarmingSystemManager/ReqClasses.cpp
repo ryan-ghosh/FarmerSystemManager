@@ -69,7 +69,7 @@ public:
     }
 };
 
-int main(){
+/* int main(){
     Inventory inventory;
     inventory.addItem("apples", 10);
     inventory.showInventory();
@@ -78,4 +78,4 @@ int main(){
     inventory.addItem("fuck", 0);
     inventory.showInventory();
     return 0;
-}
+} */
