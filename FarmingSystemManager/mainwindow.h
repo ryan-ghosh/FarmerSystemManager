@@ -15,12 +15,13 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     void createTabMenu();
-    void textdisp();
 
 private slots:
     void on_pushButton_clicked();
+    void on_pushButton_2_clicked();
 
 private:
     Ui::MainWindow *ui;
+    void storeInputString();
 };
 #endif // MAINWINDOW_H

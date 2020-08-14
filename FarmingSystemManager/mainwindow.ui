@@ -17,8 +17,8 @@
    <widget class="QTabWidget" name="tabWidget">
     <property name="geometry">
      <rect>
-      <x>70</x>
-      <y>70</y>
+      <x>10</x>
+      <y>80</y>
       <width>800</width>
       <height>600</height>
      </rect>
@@ -30,7 +30,7 @@
      </font>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>3</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -84,8 +84,8 @@
        <rect>
         <x>220</x>
         <y>230</y>
-        <width>101</width>
-        <height>22</height>
+        <width>111</width>
+        <height>41</height>
        </rect>
       </property>
       <property name="text">
@@ -109,49 +109,13 @@
       <property name="geometry">
        <rect>
         <x>250</x>
-        <y>200</y>
-        <width>47</width>
-        <height>14</height>
+        <y>183</y>
+        <width>51</width>
+        <height>31</height>
        </rect>
       </property>
       <property name="text">
        <string/>
-      </property>
-     </widget>
-     <widget class="QListWidget" name="listWidget">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>70</y>
-        <width>141</width>
-        <height>171</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QCheckBox" name="checkBox">
-      <property name="geometry">
-       <rect>
-        <x>30</x>
-        <y>80</y>
-        <width>91</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Task List</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_2">
-      <property name="geometry">
-       <rect>
-        <x>50</x>
-        <y>210</y>
-        <width>80</width>
-        <height>22</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Add Task</string>
       </property>
      </widget>
     </widget>
@@ -159,97 +123,52 @@
      <attribute name="title">
       <string>Inventory</string>
      </attribute>
-     <widget class="QListWidget" name="listWidget_2">
-      <property name="geometry">
-       <rect>
-        <x>30</x>
-        <y>10</y>
-        <width>256</width>
-        <height>192</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_3">
-      <property name="geometry">
-       <rect>
-        <x>90</x>
-        <y>160</y>
-        <width>111</width>
-        <height>22</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Edit Inventory</string>
-      </property>
-     </widget>
     </widget>
     <widget class="QWidget" name="tab_2">
      <attribute name="title">
       <string>Payroll</string>
      </attribute>
-     <widget class="QListWidget" name="listWidget_3">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>30</y>
-        <width>91</width>
-        <height>192</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>Employees: </string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QPushButton" name="pushButton_4">
-      <property name="geometry">
-       <rect>
-        <x>120</x>
-        <y>230</y>
-        <width>71</width>
-        <height>22</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Pay</string>
-      </property>
-     </widget>
-     <widget class="QListWidget" name="listWidget_4">
-      <property name="geometry">
-       <rect>
-        <x>110</x>
-        <y>30</y>
-        <width>81</width>
-        <height>192</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>Salary:</string>
-       </property>
-      </item>
-     </widget>
-     <widget class="QListWidget" name="listWidget_5">
-      <property name="geometry">
-       <rect>
-        <x>190</x>
-        <y>30</y>
-        <width>111</width>
-        <height>192</height>
-       </rect>
-      </property>
-      <item>
-       <property name="text">
-        <string>Hours:</string>
-       </property>
-      </item>
-     </widget>
     </widget>
     <widget class="QWidget" name="tab_4">
      <attribute name="title">
       <string>Task Manager</string>
      </attribute>
+     <widget class="QWidget" name="">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>20</y>
+        <width>581</width>
+        <height>311</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <widget class="QLabel" name="label_4">
+           <property name="text">
+            <string>Enter a Task:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEdit"/>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_2">
+           <property name="text">
+            <string>Go</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QTextBrowser" name="textBrowser"/>
+       </item>
+      </layout>
+     </widget>
     </widget>
    </widget>
    <widget class="QLabel" name="label_2">
@@ -281,7 +200,7 @@
      <x>0</x>
      <y>0</y>
      <width>878</width>
-     <height>21</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>

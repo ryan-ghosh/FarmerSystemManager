@@ -1,17 +1,16 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include <QTabWidget>
 #include <iostream>
+#include <QTabWidget>
 
 int k = 0;
 
-MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) , ui(new Ui::MainWindow)
+MainWindow::MainWindow(QWidget *parent)
+    : QMainWindow(parent)
+    , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
     createTabMenu();
-
-    //connect(ui->pushButton, SIGNAL(clicked(bool)), this, SLOT(on_pushButton_clicked()));
-    textdisp();
 }
 
 MainWindow::~MainWindow()
@@ -25,13 +24,18 @@ void MainWindow::createTabMenu(){
     tabs->addTab(new QWidget(), "TAB 2");
 }
 
-void MainWindow::textdisp(){
+void MainWindow::on_pushButton_clicked()
+{
+    k += 1;
     ui->labelaz->setText(QString::number(k));
 }
 
-void MainWindow::on_pushButton_clicked()
+void MainWindow::on_pushButton_2_clicked()
 {
-    k++;
-    std::cout << k << std::endl;
-    textdisp();
+    storeInputString();
+}
+
+void MainWindow::storeInputString(){
+    QString submittedString = ui->lineEdit->text();
+    ui->textBrowser->setText(submittedString);
 }
