@@ -12,6 +12,7 @@ MainWindow::MainWindow(QWidget *parent)
     createTabMenu();
 
     connect(ui->pushButton, SIGNAL(clicked(bool)), this, SLOT(on_pushButton_clicked()));
+    textdisp();
 }
 
 MainWindow::~MainWindow()
@@ -25,8 +26,12 @@ void MainWindow::createTabMenu(){
     tabs->addTab(new QWidget(), "TAB 2");
 }
 
+void MainWindow::textdisp(){
+    ui->labelaz->setText(QString::number(k));
+}
 
 void MainWindow::on_pushButton_clicked()
 {
-    ui->labelaz->setText(tr("Eyvallah"));
+    ++k;
+    textdisp();
 }

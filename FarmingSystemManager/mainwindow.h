@@ -15,6 +15,7 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     void createTabMenu();
+    void textdisp();
 
 private slots:
     void on_pushButton_clicked();
