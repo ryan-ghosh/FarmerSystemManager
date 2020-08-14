@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include <QTabWidget>
 
+int k = 0;
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -9,6 +10,8 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     createTabMenu();
+
+    connect(ui->pushButton, SIGNAL(clicked(bool)), this, SLOT(on_pushButton_clicked()));
 }
 
 MainWindow::~MainWindow()
@@ -22,3 +25,8 @@ void MainWindow::createTabMenu(){
     tabs->addTab(new QWidget(), "TAB 2");
 }
 
+
+void MainWindow::on_pushButton_clicked()
+{
+    ui->labelaz->setText(tr("Eyvallah"));
+}
