@@ -3,6 +3,7 @@
 #include <vector>
 #include <algorithm>
 #include <unordered_map>
+#include "mainwindow.h"
 
 #define pb push_back
 
@@ -13,8 +14,8 @@ float money;
 class Item{
     public:
     float price;
-    string name;
-    Item(string n, float p){
+    QString name;
+    Item(QString n, float p){
         name = n;
         price = p;
     }
@@ -22,8 +23,8 @@ class Item{
 
 class Inventory{
 public:
-    unordered_map<string,int> inventory;
-    unordered_map<string, float> prices;
+    unordered_map<QString,int> inventory;
+    unordered_map<QString, float> prices;
 
     void addItem(Item item, int quantity){
         if (inventory.find(item.name)==inventory.end()){
@@ -34,7 +35,7 @@ public:
         }
     }
 
-    void reduceItem(string item, int quantity){
+    void reduceItem(QString item, int quantity){
         if (quantity <= inventory[item]){
             inventory[item] -= quantity;
         }else{
@@ -42,12 +43,12 @@ public:
         }
     }
 
-    void removeItem(string item){
+    void removeItem(QString item){
         inventory.erase(item);
         prices.erase(item);
     }
 
-    float totalPrice(string item){
+    float totalPrice(QString item){
         // to find total price of an item in the inventory
         float ans = prices[item] * inventory[item];  // price multiplied by quantity
         return ans;
@@ -61,8 +62,8 @@ public:
         return ans;
     }
     void showInventory(){
-        for(pair<string, int> i : inventory){
-            cout << i.first << ": " << i.second<<endl;
+        for(pair<QString, int> i : inventory){
+            cout << i.first.toStdString() << ": " << i.second<<endl;
         }
     }
 
