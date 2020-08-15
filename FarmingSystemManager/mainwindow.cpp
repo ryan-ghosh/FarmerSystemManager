@@ -39,13 +39,6 @@ void MainWindow::createTabMenu(){
 
 //START of Ahmed's Portion
 
-void MainWindow::on_goButton_clicked()
-{
-    storeInputString();
-    displayTasks();
-    ui->lineEdit->clear();
-}
-
 void MainWindow::on_clearButton_clicked()
 {
     clearTasks();
@@ -53,18 +46,44 @@ void MainWindow::on_clearButton_clicked()
 
 void MainWindow::storeInputString(){
     QString submittedString = ui->lineEdit->text();
-
     if (submittedString.isEmpty()) {
         return;                             //cannot insert empty text into textBrowser
     }
 
     Task task = Task(submittedString);
-    taskManager.addTask(submittedString);
+    taskManager.addTask(task, 0);
 
     return;
 }
 
+void MainWindow::storeUrgentString(){
+    std::cout<<"hi"<<std::endl;
+    QString submittedString = ui->lineEditUrgent->text();
+    if(submittedString=="Y"){
+        taskManager.tasks[taskManager.tasks.size()-1].second = 1;
+    }else{
+        return;
+    }
+    return;
+}
+
+void MainWindow::on_urgentButton_clicked()
+{
+    std::cout<<"Button Pressed"<<std::endl;
+    storeInputString();
+    std::cout<<"stored first string"<<std::endl;
+    storeUrgentString();
+    std::cout<<"stored second string"<<std::endl;
+    displayTasks();
+    ui->lineEdit->clear();
+    ui->lineEditUrgent->clear();
+}
+
 void MainWindow::displayTasks() {
+    std::cout<<"bucko"<<std::endl;
+    for(int i=0;i<taskManager.tasks.size();i++){
+        std::cout<<taskManager.tasks[i].first.task.toStdString()<<std::endl;
+    }
     if (not ui->textBrowser->toPlainText().isEmpty()){
         ui->textBrowser->clear();           //clear textBrowser if not empty
     }
@@ -72,7 +91,7 @@ void MainWindow::displayTasks() {
     int taskLength = (int)taskManager.tasks.size();
 
     for (int i = 0; i < taskLength; i++) {
-        ui->textBrowser->append(QString::number(i + 1) + ". " + taskManager.tasks[taskLength - i - 1].task);
+        ui->textBrowser->append(QString::number(i + 1) + ". " + taskManager.tasks[i].first.task);
     }
 
     return;
@@ -225,3 +244,5 @@ void MainWindow::on_PayEmpButton_clicked()
 
     }
 }
+
+

@@ -353,8 +353,8 @@
      <widget class="QWidget" name="">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>12</y>
+        <x>100</x>
+        <y>30</y>
         <width>317</width>
         <height>272</height>
        </rect>
@@ -374,13 +374,6 @@
            <item>
             <widget class="QLineEdit" name="lineEdit"/>
            </item>
-           <item>
-            <widget class="QPushButton" name="goButton">
-             <property name="text">
-              <string>Go</string>
-             </property>
-            </widget>
-           </item>
           </layout>
          </item>
          <item>
@@ -393,10 +386,10 @@
             </widget>
            </item>
            <item>
-            <widget class="QLineEdit" name="lineEdit_2"/>
+            <widget class="QLineEdit" name="lineEditUrgent"/>
            </item>
            <item>
-            <widget class="QPushButton" name="pushButton">
+            <widget class="QPushButton" name="urgentButton">
              <property name="text">
               <string>Enter</string>
              </property>

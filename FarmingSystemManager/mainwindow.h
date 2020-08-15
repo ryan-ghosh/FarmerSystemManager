@@ -17,7 +17,7 @@ public:
     void createTabMenu();
 
 private slots:
-    void on_goButton_clicked();
+    //void on_goButton_clicked();
     void on_clearButton_clicked();      // tasks shit
 
     void on_invButton_clicked();        // inventory shit
@@ -26,12 +26,15 @@ private slots:
 
     void on_PayEmpButton_clicked();
 
+    void on_urgentButton_clicked();
+
 private:
     Ui::MainWindow *ui;
 
     void storeInputString();
     void clearTasks();
-    void displayTasks();        //tasks shit
+    void displayTasks();  //tasks shit
+    void storeUrgentString();
 
     QString InvNameClick();
     int InvQuantClick();

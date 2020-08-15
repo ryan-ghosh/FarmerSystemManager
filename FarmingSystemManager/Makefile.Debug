@@ -56,7 +56,20 @@ OBJECTS       = debug/main.o \
 		debug/mainwindow.o \
 		debug/moc_mainwindow.o
 
-DIST          =  mainwindow.h main.cpp \
+DIST          = icons/README.txt \
+		icons/qt_attribution.json \
+		icons/weather-few-clouds.png \
+		icons/weather-fog.png \
+		icons/weather-haze.png \
+		icons/weather-icy.png \
+		icons/weather-overcast.png \
+		icons/weather-showers.png \
+		icons/weather-sleet.png \
+		icons/weather-snow.png \
+		icons/weather-storm.png \
+		icons/weather-sunny-very-few-clouds.png \
+		icons/weather-sunny.png \
+		icons/weather-thundershower.png mainwindow.h main.cpp \
 		mainwindow.cpp
 QMAKE_TARGET  = FarmingSystemManager
 DESTDIR        = debug\ #avoid trailing-slash linebreak
@@ -72,7 +85,7 @@ debug/FarmingSystemManager.exe: C:/Qt/5.15.0/mingw81_64/lib/libQt5Widgets.a C:/Q
 	$(LINKER) $(LFLAGS) -o $(DESTDIR_TARGET) $(OBJECTS)  $(LIBS)
 
 qmake: FORCE
-	@$(QMAKE) -o Makefile.Debug FarmingSystemManager.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" "CONFIG-=separate_debug_info"
+	@$(QMAKE) -o Makefile.Debug FarmingSystemManager.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" "CONFIG-=qtquickcompiler"
 
 qmake_all: FORCE
 
@@ -217,7 +230,7 @@ debug/moc_mainwindow.cpp: mainwindow.h \
 		C:/Qt/5.15.0/mingw81_64/include/QtGui/qicon.h \
 		debug/moc_predefs.h \
 		C:/Qt/5.15.0/mingw81_64/bin/moc.exe
-	C:\Qt\5.15.0\mingw81_64\bin\moc.exe $(DEFINES) --include C:/Users/Soliman/Documents/FarmerSystemManager/FarmingSystemManager/debug/moc_predefs.h -IC:/Qt/5.15.0/mingw81_64/mkspecs/win32-g++ -IC:/Users/Soliman/Documents/FarmerSystemManager/FarmingSystemManager -IC:/Qt/5.15.0/mingw81_64/include -IC:/Qt/5.15.0/mingw81_64/include/QtWidgets -IC:/Qt/5.15.0/mingw81_64/include/QtGui -IC:/Qt/5.15.0/mingw81_64/include/QtANGLE -IC:/Qt/5.15.0/mingw81_64/include/QtCore -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++ -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed -IC:/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include mainwindow.h -o debug\moc_mainwindow.cpp
+	C:\Qt\5.15.0\mingw81_64\bin\moc.exe $(DEFINES) --include C:/Users/ryang/OneDrive/Documents/FarmerSystemManager/FarmingSystemManager/debug/moc_predefs.h -IC:/Qt/5.15.0/mingw81_64/mkspecs/win32-g++ -IC:/Users/ryang/OneDrive/Documents/FarmerSystemManager/FarmingSystemManager -IC:/Qt/5.15.0/mingw81_64/include -IC:/Qt/5.15.0/mingw81_64/include/QtWidgets -IC:/Qt/5.15.0/mingw81_64/include/QtGui -IC:/Qt/5.15.0/mingw81_64/include/QtANGLE -IC:/Qt/5.15.0/mingw81_64/include/QtCore -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++ -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed -IC:/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include mainwindow.h -o debug\moc_mainwindow.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
