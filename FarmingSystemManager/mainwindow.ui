@@ -18,7 +18,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>80</y>
+      <y>60</y>
       <width>801</width>
       <height>591</height>
      </rect>
@@ -30,7 +30,7 @@
      </font>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -114,82 +114,13 @@
      <attribute name="title">
       <string>Inventory</string>
      </attribute>
-     <widget class="QWidget" name="layoutWidget">
-      <property name="geometry">
-       <rect>
-        <x>60</x>
-        <y>70</y>
-        <width>481</width>
-        <height>124</height>
-       </rect>
-      </property>
-      <layout class="QVBoxLayout" name="verticalLayout_7">
-       <item>
-        <layout class="QVBoxLayout" name="verticalLayout_5">
-         <item>
-          <layout class="QHBoxLayout" name="horizontalLayout_4">
-           <item>
-            <layout class="QVBoxLayout" name="verticalLayout_4">
-             <item>
-              <widget class="QLabel" name="label_5">
-               <property name="text">
-                <string>Item Name:</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QLabel" name="label_6">
-               <property name="text">
-                <string>Quantity:</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QLabel" name="label_7">
-               <property name="text">
-                <string>Price:</string>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </item>
-           <item>
-            <layout class="QVBoxLayout" name="verticalLayout_6">
-             <item>
-              <widget class="QLineEdit" name="lineEditName"/>
-             </item>
-             <item>
-              <widget class="QLineEdit" name="lineEditQuant"/>
-             </item>
-             <item>
-              <widget class="QLineEdit" name="lineEditPrice"/>
-             </item>
-            </layout>
-           </item>
-           <item>
-            <layout class="QVBoxLayout" name="verticalLayout_3">
-             <item>
-              <widget class="QPushButton" name="invButton">
-               <property name="text">
-                <string>GO</string>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </item>
-          </layout>
-         </item>
-        </layout>
-       </item>
-      </layout>
-     </widget>
      <widget class="QTableWidget" name="invtable">
       <property name="geometry">
        <rect>
-        <x>60</x>
-        <y>200</y>
-        <width>691</width>
-        <height>331</height>
+        <x>0</x>
+        <y>220</y>
+        <width>801</width>
+        <height>281</height>
        </rect>
       </property>
       <property name="sizePolicy">
@@ -228,23 +159,140 @@
        </property>
       </column>
      </widget>
-     <widget class="QLabel" name="label_3">
+     <widget class="QLabel" name="label_18">
       <property name="geometry">
        <rect>
-        <x>60</x>
+        <x>20</x>
+        <y>70</y>
+        <width>411</width>
+        <height>121</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.&quot;</string>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_19">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
         <y>20</y>
-        <width>181</width>
-        <height>31</height>
+        <width>211</width>
+        <height>41</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <pointsize>16</pointsize>
+        <pointsize>20</pointsize>
        </font>
       </property>
       <property name="text">
-       <string>Add an Item:</string>
+       <string>Inventory Header</string>
       </property>
+     </widget>
+     <widget class="QPushButton" name="PayEmpButton_2">
+      <property name="geometry">
+       <rect>
+        <x>320</x>
+        <y>510</y>
+        <width>101</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Remove Item</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="">
+      <property name="geometry">
+       <rect>
+        <x>460</x>
+        <y>50</y>
+        <width>313</width>
+        <height>137</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QLabel" name="label_3">
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Add an Item:</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_7">
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_5">
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_4">
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout_4">
+               <item>
+                <widget class="QLabel" name="label_5">
+                 <property name="text">
+                  <string>Item Name:</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="label_6">
+                 <property name="text">
+                  <string>Quantity:</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="label_7">
+                 <property name="text">
+                  <string>Price:</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout_6">
+               <item>
+                <widget class="QLineEdit" name="lineEditName"/>
+               </item>
+               <item>
+                <widget class="QLineEdit" name="lineEditQuant"/>
+               </item>
+               <item>
+                <widget class="QLineEdit" name="lineEditPrice"/>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout_3">
+               <item>
+                <widget class="QPushButton" name="invButton">
+                 <property name="text">
+                  <string>ADD</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+      </layout>
      </widget>
     </widget>
     <widget class="QWidget" name="tab_2">
@@ -255,7 +303,7 @@
       <property name="geometry">
        <rect>
         <x>320</x>
-        <y>470</y>
+        <y>510</y>
         <width>101</width>
         <height>31</height>
        </rect>
@@ -267,10 +315,10 @@
      <widget class="QTableWidget" name="payrolltable">
       <property name="geometry">
        <rect>
-        <x>120</x>
-        <y>140</y>
-        <width>631</width>
-        <height>321</height>
+        <x>0</x>
+        <y>220</y>
+        <width>801</width>
+        <height>281</height>
        </rect>
       </property>
       <column>
@@ -299,64 +347,110 @@
        </property>
       </column>
      </widget>
-     <widget class="QPushButton" name="payButton_3">
-      <property name="geometry">
-       <rect>
-        <x>460</x>
-        <y>50</y>
-        <width>80</width>
-        <height>30</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Enter</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="layoutWidget">
+     <widget class="QLabel" name="label_10">
       <property name="geometry">
        <rect>
         <x>20</x>
-        <y>10</y>
-        <width>411</width>
-        <height>120</height>
+        <y>20</y>
+        <width>181</width>
+        <height>41</height>
        </rect>
       </property>
-      <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Payroll Header</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_17">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>70</y>
+        <width>411</width>
+        <height>121</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.&quot;</string>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QWidget" name="">
+      <property name="geometry">
+       <rect>
+        <x>459</x>
+        <y>50</y>
+        <width>311</width>
+        <height>135</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_9">
        <item>
-        <layout class="QVBoxLayout" name="verticalLayout_8">
-         <item>
-          <widget class="QLabel" name="label_11">
-           <property name="text">
-            <string>Employee:</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_12">
-           <property name="text">
-            <string>Salary:</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_13">
-           <property name="text">
-            <string>Hours:</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
+        <widget class="QLabel" name="label_9">
+         <property name="text">
+          <string>Add an Employee:</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
        </item>
        <item>
-        <layout class="QVBoxLayout" name="verticalLayout_12">
+        <layout class="QHBoxLayout" name="horizontalLayout">
          <item>
-          <widget class="QLineEdit" name="lineEditEmployee"/>
+          <layout class="QHBoxLayout" name="horizontalLayout_2">
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout_8">
+             <item>
+              <widget class="QLabel" name="label_11">
+               <property name="text">
+                <string>Name:</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_12">
+               <property name="text">
+                <string>Rate:</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_13">
+               <property name="text">
+                <string>Hours:</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout_12">
+             <item>
+              <widget class="QLineEdit" name="lineEditEmployee"/>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEditSalary"/>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEditHours"/>
+             </item>
+            </layout>
+           </item>
+          </layout>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEditSalary"/>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="lineEditHours"/>
+          <widget class="QPushButton" name="payButton_3">
+           <property name="text">
+            <string>Enter</string>
+           </property>
+          </widget>
          </item>
         </layout>
        </item>
@@ -380,55 +474,96 @@
        <string>Clear All Tasks</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="urgentButton">
+     <widget class="QLabel" name="label_23">
       <property name="geometry">
        <rect>
-        <x>660</x>
-        <y>80</y>
-        <width>93</width>
-        <height>37</height>
+        <x>20</x>
+        <y>20</y>
+        <width>271</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Task Manager Header</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_24">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>70</y>
+        <width>411</width>
+        <height>121</height>
        </rect>
       </property>
       <property name="text">
-       <string>Enter</string>
+       <string>&quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.&quot;</string>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
       </property>
      </widget>
-     <widget class="QWidget" name="layoutWidget">
+     <widget class="QTextBrowser" name="textBrowser">
       <property name="geometry">
        <rect>
-        <x>100</x>
-        <y>60</y>
-        <width>521</width>
-        <height>280</height>
+        <x>0</x>
+        <y>220</y>
+        <width>801</width>
+        <height>281</height>
        </rect>
       </property>
-      <layout class="QVBoxLayout" name="verticalLayout">
+     </widget>
+     <widget class="QWidget" name="">
+      <property name="geometry">
+       <rect>
+        <x>460</x>
+        <y>50</y>
+        <width>311</width>
+        <height>136</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_10">
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_5">
+        <widget class="QLabel" name="label_25">
+         <property name="text">
+          <string>Add a Task:</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout">
          <item>
-          <layout class="QVBoxLayout" name="verticalLayout_9">
+          <layout class="QHBoxLayout" name="horizontalLayout_5">
            <item>
             <widget class="QLabel" name="label_4">
              <property name="text">
-              <string>Enter a Task:</string>
+              <string>Task Name:   </string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QLabel" name="label_8">
+            <widget class="QLineEdit" name="lineEdit">
              <property name="text">
-              <string>Urgent (Y/N):</string>
+              <string/>
              </property>
             </widget>
            </item>
           </layout>
          </item>
          <item>
-          <layout class="QVBoxLayout" name="verticalLayout_10">
+          <layout class="QHBoxLayout" name="horizontalLayout_8">
            <item>
-            <widget class="QLineEdit" name="lineEdit">
+            <widget class="QLabel" name="label_8">
              <property name="text">
-              <string/>
+              <string>Urgent (Y/N):</string>
              </property>
             </widget>
            </item>
@@ -437,10 +572,14 @@
            </item>
           </layout>
          </item>
+         <item>
+          <widget class="QPushButton" name="urgentButton">
+           <property name="text">
+            <string>Enter</string>
+           </property>
+          </widget>
+         </item>
         </layout>
-       </item>
-       <item>
-        <widget class="QTextBrowser" name="textBrowser"/>
        </item>
       </layout>
      </widget>

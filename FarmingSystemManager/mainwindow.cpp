@@ -25,6 +25,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) , ui(new Ui::MainW
     ui->setupUi(this);
     createTabMenu();
     ui->payrolltable->resizeColumnsToContents();
+    ui->invtable->resizeColumnsToContents();
 }
 
 MainWindow::~MainWindow()
@@ -262,8 +263,6 @@ void MainWindow::on_PayEmpButton_clicked()
         if (box->isChecked()){
             ui->payrolltable->setItem(i,2,new QTableWidgetItem(QString::number(0), 0));
             ui->payrolltable->setItem(i,3,new QTableWidgetItem(QString::number(0), 0));
-        } else {
-            std::cout << "something fucked up" << std::endl;
         }
     }
     return;
