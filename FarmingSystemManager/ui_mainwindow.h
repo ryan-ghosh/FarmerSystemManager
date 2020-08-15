@@ -46,9 +46,9 @@ public:
     QHBoxLayout *horizontalLayout;
     QLabel *label_4;
     QLineEdit *lineEdit;
-    QPushButton *pushButton_2;
+    QPushButton *goButton;
     QTextBrowser *textBrowser;
-    QPushButton *pushButton_3;
+    QPushButton *clearButton;
     QLabel *label_2;
     QMenuBar *menubar;
     QStatusBar *statusbar;
@@ -106,7 +106,7 @@ public:
         tab_4->setObjectName(QString::fromUtf8("tab_4"));
         widget = new QWidget(tab_4);
         widget->setObjectName(QString::fromUtf8("widget"));
-        widget->setGeometry(QRect(50, 20, 406, 286));
+        widget->setGeometry(QRect(10, 10, 591, 401));
         verticalLayout_2 = new QVBoxLayout(widget);
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
         verticalLayout_2->setContentsMargins(0, 0, 0, 0);
@@ -124,10 +124,10 @@ public:
 
         horizontalLayout->addWidget(lineEdit);
 
-        pushButton_2 = new QPushButton(widget);
-        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
+        goButton = new QPushButton(widget);
+        goButton->setObjectName(QString::fromUtf8("goButton"));
 
-        horizontalLayout->addWidget(pushButton_2);
+        horizontalLayout->addWidget(goButton);
 
 
         verticalLayout->addLayout(horizontalLayout);
@@ -140,10 +140,10 @@ public:
 
         verticalLayout_2->addLayout(verticalLayout);
 
-        pushButton_3 = new QPushButton(widget);
-        pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
+        clearButton = new QPushButton(widget);
+        clearButton->setObjectName(QString::fromUtf8("clearButton"));
 
-        verticalLayout_2->addWidget(pushButton_3);
+        verticalLayout_2->addWidget(clearButton);
 
         tabWidget->addTab(tab_4, QString());
         label_2 = new QLabel(centralwidget);
@@ -182,8 +182,8 @@ public:
         tabWidget->setTabText(tabWidget->indexOf(tab_3), QCoreApplication::translate("MainWindow", "Inventory", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_2), QCoreApplication::translate("MainWindow", "Payroll", nullptr));
         label_4->setText(QCoreApplication::translate("MainWindow", "Enter a Task:", nullptr));
-        pushButton_2->setText(QCoreApplication::translate("MainWindow", "Go", nullptr));
-        pushButton_3->setText(QCoreApplication::translate("MainWindow", "Clear All Tasks", nullptr));
+        goButton->setText(QCoreApplication::translate("MainWindow", "Go", nullptr));
+        clearButton->setText(QCoreApplication::translate("MainWindow", "Clear All Tasks", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_4), QCoreApplication::translate("MainWindow", "Task Manager", nullptr));
         label_2->setText(QCoreApplication::translate("MainWindow", "Farmers' System Manager", nullptr));
     } // retranslateUi

@@ -33,16 +33,19 @@ void MainWindow::on_pushButton_clicked()
     ui->labelaz->setText(QString::number(k));
 }
 
+
+//START of Ahmed's Portion
+
 void MainWindow::on_goButton_clicked()
 {
-    storeInputString();
+    storeInputString();         
     displayTasks();
     ui->lineEdit->clear();
 }
 
 void MainWindow::on_clearButton_clicked()
 {
-    clearTasks();
+    clearTasks();           
 }
 
 void MainWindow::storeInputString(){
@@ -80,3 +83,6 @@ void MainWindow::clearTasks() {
     ui->textBrowser->clear();
     return;
 }
+
+
+//END of Ahmed's Portion
