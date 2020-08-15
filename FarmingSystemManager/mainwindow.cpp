@@ -167,15 +167,12 @@ QString EmployeeName;
 float salary;
 float hours;
 PayRollSystem payroll;
+int empcount = 0;
 
 
 QString MainWindow::EmployeeNames(){
     QString submittedString = ui->lineEditEmployee->text();
-
-    if (submittedString.isEmpty()) {
-        return "";                             //cannot insert empty text into textBrowser
-    }
-
+    if (submittedString.isEmpty()) { return ""; }                        //cannot insert empty text into textBrowser
     return submittedString;
 }
 
@@ -188,21 +185,23 @@ float MainWindow::Salary(){
 }
 
 void MainWindow::displayPayroll(){
-    std::vector<Employee>::iterator i = payroll.employees.begin();
+
+    Employee *i = &payroll.employees[empcount];
+    std::cout << i->name.toStdString() << std::endl;
     QTableWidgetItem *in = new QTableWidgetItem(i->name, 0);
     QTableWidgetItem *iq = new QTableWidgetItem(QString::number(i->salary), 0);
     QTableWidgetItem *ip = new QTableWidgetItem(QString::number(i->hours), 0);
     QTableWidgetItem *itp = new QTableWidgetItem(QString::number(i->hours * i->salary), 0);
+
     ui->payrolltable->insertRow( ui->payrolltable->rowCount() );
-    ui->payrolltable->setItem(ui->payrolltable->rowCount()-1,1,in);
-    ui->payrolltable->setItem(ui->payrolltable->rowCount()-1,2,iq);
+    ui->payrolltable->setItem(ui->payrolltable->rowCount()-1,0,in);
+    ui->payrolltable->setItem(ui->payrolltable->rowCount()-1,1,iq);
     ui->payrolltable->setItem(ui->payrolltable->rowCount()-1,2,ip);
     ui->payrolltable->setItem(ui->payrolltable->rowCount()-1,3,itp);
     ui->payrolltable->update();
-    i++;
+    empcount++;
     return;
 }
-
 
 void MainWindow::on_payButton_3_clicked()
 {
@@ -216,4 +215,13 @@ void MainWindow::on_payButton_3_clicked()
     Employee chad = Employee(EmployeeName, salary, hours);
     payroll.employees.push_back(chad);
     displayPayroll();
+}
+
+
+
+void MainWindow::on_PayEmpButton_clicked()
+{
+    for (int i = 0 ; i < ui->payrolltable->rowCount() ; ++i){
+
+    }
 }
