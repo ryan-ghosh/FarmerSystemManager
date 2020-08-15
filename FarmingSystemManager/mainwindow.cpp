@@ -2,9 +2,16 @@
 #include "ui_mainwindow.h"
 #include <iostream>
 #include <QTabWidget>
+#include "ReqClasses.cpp"
 
 int k = 0;
 QStringList taskList = {};
+Inventory inventory = Inventory();
+QString holla;  // item name
+int boi;    // item quant
+float bruh; // item price
+//PayRollSystem payroll = PayRollSystem(10000.00);
+
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -72,5 +79,55 @@ void MainWindow::clearTasks() {
     }
 
     ui->textBrowser->clear();
+    return;
+}
+
+void MainWindow::on_pushButton_4_clicked()  // inventory item name
+{
+    holla = InvNameClick();
+    ui->lineEdit->clear();
+}
+
+void MainWindow::on_pushButton_5_clicked()  // item quant
+{
+    boi = InvQuantClick();
+    ui->lineEdit->clear();
+}
+
+void MainWindow::on_pushButton_6_clicked()  // item price
+{
+    bruh = InvPriceClick();
+    Item item = Item(holla,bruh);
+    inventory.addItem(item, boi);
+    ui->lineEdit->clear();
+    displayInv();
+}
+
+QString MainWindow::InvNameClick(){
+    QString submittedString = ui->lineEdit->text();
+    if (submittedString.isEmpty()) {
+        return "";                             //cannot insert empty text into textBrowser
+    }
+
+    return submittedString;
+}
+
+int MainWindow::InvQuantClick(){
+    int quant = ui->lineEdit->text().toInt();
+    return quant;
+}
+float MainWindow::InvPriceClick(){
+    float price = ui->lineEdit->text().toFloat();
+    return price;
+}
+
+void MainWindow::displayInv(){
+    if (not ui->textBrowser->toPlainText().isEmpty()){
+        ui->textBrowser->clear();           //clear textBrowser if not empty
+    }
+
+    for(pair<QString, int> i:inventory.inventory){
+        ui->textBrowser->append(i.first + ": " + i.second + " $" + inventory.prices[i.first]);
+    }
     return;
 }

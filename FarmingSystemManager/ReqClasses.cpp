@@ -9,7 +9,7 @@
 
 using namespace std;
 
-float money;
+//float money;
 
 class Item{
     public:
@@ -88,16 +88,16 @@ public:
 
 class PayRollSystem{
 public:
-    float money;
+    float cash;
     vector<Employee> employees;
 
     PayRollSystem(float bank){
-        money = bank;
+        cash = bank;
     }
 
     void payday(){
         for(Employee i : employees){
-            money -= i.salary + i.deductions;
+            cash -= i.salary + i.deductions;
         }
     }
 };
