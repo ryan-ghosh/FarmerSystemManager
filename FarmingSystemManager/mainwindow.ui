@@ -138,34 +138,45 @@
        <rect>
         <x>50</x>
         <y>20</y>
-        <width>581</width>
-        <height>311</height>
+        <width>406</width>
+        <height>286</height>
        </rect>
       </property>
-      <layout class="QVBoxLayout" name="verticalLayout">
+      <layout class="QVBoxLayout" name="verticalLayout_2">
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout">
+        <layout class="QVBoxLayout" name="verticalLayout">
          <item>
-          <widget class="QLabel" name="label_4">
-           <property name="text">
-            <string>Enter a Task:</string>
-           </property>
-          </widget>
+          <layout class="QHBoxLayout" name="horizontalLayout">
+           <item>
+            <widget class="QLabel" name="label_4">
+             <property name="text">
+              <string>Enter a Task:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="lineEdit"/>
+           </item>
+           <item>
+            <widget class="QPushButton" name="pushButton_2">
+             <property name="text">
+              <string>Go</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit"/>
-         </item>
-         <item>
-          <widget class="QPushButton" name="pushButton_2">
-           <property name="text">
-            <string>Go</string>
-           </property>
-          </widget>
+          <widget class="QTextBrowser" name="textBrowser"/>
          </item>
         </layout>
        </item>
        <item>
-        <widget class="QTextBrowser" name="textBrowser"/>
+        <widget class="QPushButton" name="pushButton_3">
+         <property name="text">
+          <string>Clear All Tasks</string>
+         </property>
+        </widget>
        </item>
       </layout>
      </widget>

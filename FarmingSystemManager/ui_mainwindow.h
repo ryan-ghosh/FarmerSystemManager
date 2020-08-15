@@ -41,12 +41,14 @@ public:
     QWidget *tab_2;
     QWidget *tab_4;
     QWidget *widget;
+    QVBoxLayout *verticalLayout_2;
     QVBoxLayout *verticalLayout;
     QHBoxLayout *horizontalLayout;
     QLabel *label_4;
     QLineEdit *lineEdit;
     QPushButton *pushButton_2;
     QTextBrowser *textBrowser;
+    QPushButton *pushButton_3;
     QLabel *label_2;
     QMenuBar *menubar;
     QStatusBar *statusbar;
@@ -104,10 +106,12 @@ public:
         tab_4->setObjectName(QString::fromUtf8("tab_4"));
         widget = new QWidget(tab_4);
         widget->setObjectName(QString::fromUtf8("widget"));
-        widget->setGeometry(QRect(50, 20, 581, 311));
-        verticalLayout = new QVBoxLayout(widget);
+        widget->setGeometry(QRect(50, 20, 406, 286));
+        verticalLayout_2 = new QVBoxLayout(widget);
+        verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
+        verticalLayout_2->setContentsMargins(0, 0, 0, 0);
+        verticalLayout = new QVBoxLayout();
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
-        verticalLayout->setContentsMargins(0, 0, 0, 0);
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         label_4 = new QLabel(widget);
@@ -132,6 +136,14 @@ public:
         textBrowser->setObjectName(QString::fromUtf8("textBrowser"));
 
         verticalLayout->addWidget(textBrowser);
+
+
+        verticalLayout_2->addLayout(verticalLayout);
+
+        pushButton_3 = new QPushButton(widget);
+        pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
+
+        verticalLayout_2->addWidget(pushButton_3);
 
         tabWidget->addTab(tab_4, QString());
         label_2 = new QLabel(centralwidget);
@@ -171,6 +183,7 @@ public:
         tabWidget->setTabText(tabWidget->indexOf(tab_2), QCoreApplication::translate("MainWindow", "Payroll", nullptr));
         label_4->setText(QCoreApplication::translate("MainWindow", "Enter a Task:", nullptr));
         pushButton_2->setText(QCoreApplication::translate("MainWindow", "Go", nullptr));
+        pushButton_3->setText(QCoreApplication::translate("MainWindow", "Clear All Tasks", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_4), QCoreApplication::translate("MainWindow", "Task Manager", nullptr));
         label_2->setText(QCoreApplication::translate("MainWindow", "Farmers' System Manager", nullptr));
     } // retranslateUi
