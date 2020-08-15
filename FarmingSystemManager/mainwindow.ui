@@ -17,7 +17,7 @@
    <widget class="QTabWidget" name="tabWidget">
     <property name="geometry">
      <rect>
-      <x>-20</x>
+      <x>10</x>
       <y>80</y>
       <width>801</width>
       <height>591</height>
@@ -30,7 +30,7 @@
      </font>
     </property>
     <property name="currentIndex">
-     <number>3</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -77,6 +77,16 @@
       </property>
       <property name="text">
        <string>Welcome!!</string>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="urgentTaskTable">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>80</y>
+        <width>256</width>
+        <height>192</height>
+       </rect>
       </property>
      </widget>
     </widget>
@@ -239,7 +249,7 @@
        <rect>
         <x>120</x>
         <y>140</y>
-        <width>551</width>
+        <width>631</width>
         <height>321</height>
        </rect>
       </property>
@@ -340,30 +350,43 @@
      <widget class="QPushButton" name="clearButton">
       <property name="geometry">
        <rect>
-        <x>11</x>
-        <y>480</y>
-        <width>107</width>
-        <height>30</height>
+        <x>190</x>
+        <y>350</y>
+        <width>141</width>
+        <height>41</height>
        </rect>
       </property>
       <property name="text">
        <string>Clear All Tasks</string>
       </property>
      </widget>
+     <widget class="QPushButton" name="urgentButton">
+      <property name="geometry">
+       <rect>
+        <x>660</x>
+        <y>80</y>
+        <width>93</width>
+        <height>37</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Enter</string>
+      </property>
+     </widget>
      <widget class="QWidget" name="">
       <property name="geometry">
        <rect>
         <x>100</x>
-        <y>30</y>
-        <width>317</width>
-        <height>272</height>
+        <y>60</y>
+        <width>521</width>
+        <height>280</height>
        </rect>
       </property>
-      <layout class="QVBoxLayout" name="verticalLayout_2">
+      <layout class="QVBoxLayout" name="verticalLayout">
        <item>
-        <layout class="QVBoxLayout" name="verticalLayout">
+        <layout class="QHBoxLayout" name="horizontalLayout_5">
          <item>
-          <layout class="QHBoxLayout" name="horizontalLayout">
+          <layout class="QVBoxLayout" name="verticalLayout_9">
            <item>
             <widget class="QLabel" name="label_4">
              <property name="text">
@@ -372,28 +395,25 @@
             </widget>
            </item>
            <item>
-            <widget class="QLineEdit" name="lineEdit"/>
-           </item>
-          </layout>
-         </item>
-         <item>
-          <layout class="QHBoxLayout" name="horizontalLayout_3">
-           <item>
             <widget class="QLabel" name="label_8">
              <property name="text">
               <string>Urgent (Y/N):</string>
              </property>
             </widget>
            </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_10">
            <item>
-            <widget class="QLineEdit" name="lineEditUrgent"/>
-           </item>
-           <item>
-            <widget class="QPushButton" name="urgentButton">
+            <widget class="QLineEdit" name="lineEdit">
              <property name="text">
-              <string>Enter</string>
+              <string/>
              </property>
             </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="lineEditUrgent"/>
            </item>
           </layout>
          </item>
@@ -435,7 +455,7 @@
      <x>0</x>
      <y>0</y>
      <width>858</width>
-     <height>21</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>

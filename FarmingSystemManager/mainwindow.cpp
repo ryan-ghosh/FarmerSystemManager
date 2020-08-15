@@ -7,8 +7,7 @@
 #include <QTabWidget>
 #include <QTableWidget>
 #include <QTableWidgetItem>
-
-
+#include <QtDebug>
 
 TaskManager taskManager = TaskManager();
 Inventory inventory = Inventory();
@@ -23,7 +22,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) , ui(new Ui::MainW
 {
     ui->setupUi(this);
     createTabMenu();
-    //QTableWidget *invtable = new QTableWidget();
 }
 
 MainWindow::~MainWindow()
@@ -46,52 +44,43 @@ void MainWindow::on_clearButton_clicked()
 
 void MainWindow::storeInputString(){
     QString submittedString = ui->lineEdit->text();
+    QString urgentLine = ui->lineEditUrgent->text();
+
+    int urgency = 0;
+
     if (submittedString.isEmpty()) {
         return;                             //cannot insert empty text into textBrowser
     }
 
-    Task task = Task(submittedString);
-    taskManager.addTask(task, 0);
-
-    return;
-}
-
-void MainWindow::storeUrgentString(){
-    std::cout<<"hi"<<std::endl;
-    QString submittedString = ui->lineEditUrgent->text();
-    if(submittedString=="Y"){
-        taskManager.tasks[taskManager.tasks.size()-1].second = 1;
-    }else{
-        return;
+    if(urgentLine == "Y" || urgentLine == "y"){
+        urgency = 1;                        //make it urgent
     }
+
+    Task task = Task(submittedString);
+    taskManager.addTask(task, urgency);
+
     return;
 }
 
 void MainWindow::on_urgentButton_clicked()
 {
-    std::cout<<"Button Pressed"<<std::endl;
     storeInputString();
-    std::cout<<"stored first string"<<std::endl;
-    storeUrgentString();
-    std::cout<<"stored second string"<<std::endl;
     displayTasks();
+
     ui->lineEdit->clear();
     ui->lineEditUrgent->clear();
 }
 
 void MainWindow::displayTasks() {
-    std::cout<<"bucko"<<std::endl;
-    for(int i=0;i<taskManager.tasks.size();i++){
-        std::cout<<taskManager.tasks[i].first.task.toStdString()<<std::endl;
-    }
+    int taskLength = (int)taskManager.tasks.size();
+
     if (not ui->textBrowser->toPlainText().isEmpty()){
         ui->textBrowser->clear();           //clear textBrowser if not empty
     }
 
-    int taskLength = (int)taskManager.tasks.size();
-
     for (int i = 0; i < taskLength; i++) {
-        ui->textBrowser->append(QString::number(i + 1) + ". " + taskManager.tasks[i].first.task);
+        ui->textBrowser->append(QString::number(i + 1) + ". " + taskManager.tasks[taskLength - i - 1].first.task);
+        qDebug() << taskManager.tasks[taskLength - i - 1].second;
     }
 
     return;
@@ -131,8 +120,6 @@ void MainWindow::on_invButton_clicked()
     inventory.addItem(item, itemQuant);
 
     displayInv();
-
-
 }
 
 QString MainWindow::InvNameClick(){
@@ -191,7 +178,7 @@ int empcount = 0;
 
 QString MainWindow::EmployeeNames(){
     QString submittedString = ui->lineEditEmployee->text();
-    if (submittedString.isEmpty()) { return ""; }                        //cannot insert empty text into textBrowser
+    if (submittedString.isEmpty()) {return "";}                        //cannot insert empty text into textBrowser
     return submittedString;
 }
 
@@ -235,14 +222,4 @@ void MainWindow::on_payButton_3_clicked()
     payroll.employees.push_back(chad);
     displayPayroll();
 }
-
-
-
-void MainWindow::on_PayEmpButton_clicked()
-{
-    for (int i = 0 ; i < ui->payrolltable->rowCount() ; ++i){
-
-    }
-}
-
 

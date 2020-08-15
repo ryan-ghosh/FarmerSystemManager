@@ -24,8 +24,6 @@ private slots:
 
     void on_payButton_3_clicked();      // payroll
 
-    void on_PayEmpButton_clicked();
-
     void on_urgentButton_clicked();
 
 private:

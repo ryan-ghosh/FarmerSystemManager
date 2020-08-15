@@ -69,16 +69,16 @@ public:
     QLineEdit *lineEditHours;
     QWidget *tab_4;
     QPushButton *clearButton;
-    QWidget *widget;
-    QVBoxLayout *verticalLayout_2;
-    QVBoxLayout *verticalLayout;
-    QHBoxLayout *horizontalLayout;
-    QLabel *label_4;
-    QLineEdit *lineEdit;
-    QHBoxLayout *horizontalLayout_3;
-    QLabel *label_8;
-    QLineEdit *lineEditUrgent;
     QPushButton *urgentButton;
+    QWidget *widget;
+    QVBoxLayout *verticalLayout;
+    QHBoxLayout *horizontalLayout_5;
+    QVBoxLayout *verticalLayout_9;
+    QLabel *label_4;
+    QLabel *label_8;
+    QVBoxLayout *verticalLayout_10;
+    QLineEdit *lineEdit;
+    QLineEdit *lineEditUrgent;
     QTextBrowser *textBrowser;
     QLabel *label_2;
     QMenuBar *menubar;
@@ -93,7 +93,7 @@ public:
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         tabWidget = new QTabWidget(centralwidget);
         tabWidget->setObjectName(QString::fromUtf8("tabWidget"));
-        tabWidget->setGeometry(QRect(-20, 80, 801, 591));
+        tabWidget->setGeometry(QRect(10, 80, 801, 591));
         QFont font;
         font.setFamily(QString::fromUtf8("Segoe UI"));
         font.setPointSize(12);
@@ -230,7 +230,7 @@ public:
         QTableWidgetItem *__qtablewidgetitem8 = new QTableWidgetItem();
         payrolltable->setHorizontalHeaderItem(4, __qtablewidgetitem8);
         payrolltable->setObjectName(QString::fromUtf8("payrolltable"));
-        payrolltable->setGeometry(QRect(120, 140, 551, 321));
+        payrolltable->setGeometry(QRect(120, 140, 631, 321));
         payButton_3 = new QPushButton(tab_2);
         payButton_3->setObjectName(QString::fromUtf8("payButton_3"));
         payButton_3->setGeometry(QRect(460, 50, 80, 30));
@@ -285,57 +285,55 @@ public:
         tab_4->setObjectName(QString::fromUtf8("tab_4"));
         clearButton = new QPushButton(tab_4);
         clearButton->setObjectName(QString::fromUtf8("clearButton"));
-        clearButton->setGeometry(QRect(11, 480, 107, 30));
+        clearButton->setGeometry(QRect(190, 350, 141, 41));
+        urgentButton = new QPushButton(tab_4);
+        urgentButton->setObjectName(QString::fromUtf8("urgentButton"));
+        urgentButton->setGeometry(QRect(430, 80, 93, 37));
         widget = new QWidget(tab_4);
         widget->setObjectName(QString::fromUtf8("widget"));
-        widget->setGeometry(QRect(100, 30, 317, 272));
-        verticalLayout_2 = new QVBoxLayout(widget);
-        verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
-        verticalLayout_2->setContentsMargins(0, 0, 0, 0);
-        verticalLayout = new QVBoxLayout();
+        widget->setGeometry(QRect(100, 60, 319, 280));
+        verticalLayout = new QVBoxLayout(widget);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
-        horizontalLayout = new QHBoxLayout();
-        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
+        verticalLayout->setContentsMargins(0, 0, 0, 0);
+        horizontalLayout_5 = new QHBoxLayout();
+        horizontalLayout_5->setObjectName(QString::fromUtf8("horizontalLayout_5"));
+        verticalLayout_9 = new QVBoxLayout();
+        verticalLayout_9->setObjectName(QString::fromUtf8("verticalLayout_9"));
         label_4 = new QLabel(widget);
         label_4->setObjectName(QString::fromUtf8("label_4"));
 
-        horizontalLayout->addWidget(label_4);
+        verticalLayout_9->addWidget(label_4);
 
-        lineEdit = new QLineEdit(widget);
-        lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
-
-        horizontalLayout->addWidget(lineEdit);
-
-
-        verticalLayout->addLayout(horizontalLayout);
-
-        horizontalLayout_3 = new QHBoxLayout();
-        horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
         label_8 = new QLabel(widget);
         label_8->setObjectName(QString::fromUtf8("label_8"));
 
-        horizontalLayout_3->addWidget(label_8);
+        verticalLayout_9->addWidget(label_8);
+
+
+        horizontalLayout_5->addLayout(verticalLayout_9);
+
+        verticalLayout_10 = new QVBoxLayout();
+        verticalLayout_10->setObjectName(QString::fromUtf8("verticalLayout_10"));
+        lineEdit = new QLineEdit(widget);
+        lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
+
+        verticalLayout_10->addWidget(lineEdit);
 
         lineEditUrgent = new QLineEdit(widget);
         lineEditUrgent->setObjectName(QString::fromUtf8("lineEditUrgent"));
 
-        horizontalLayout_3->addWidget(lineEditUrgent);
-
-        urgentButton = new QPushButton(widget);
-        urgentButton->setObjectName(QString::fromUtf8("urgentButton"));
-
-        horizontalLayout_3->addWidget(urgentButton);
+        verticalLayout_10->addWidget(lineEditUrgent);
 
 
-        verticalLayout->addLayout(horizontalLayout_3);
+        horizontalLayout_5->addLayout(verticalLayout_10);
 
 
-        verticalLayout_2->addLayout(verticalLayout);
+        verticalLayout->addLayout(horizontalLayout_5);
 
         textBrowser = new QTextBrowser(widget);
         textBrowser->setObjectName(QString::fromUtf8("textBrowser"));
 
-        verticalLayout_2->addWidget(textBrowser);
+        verticalLayout->addWidget(textBrowser);
 
         tabWidget->addTab(tab_4, QString());
         label_2 = new QLabel(centralwidget);
@@ -349,7 +347,7 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 858, 21));
+        menubar->setGeometry(QRect(0, 0, 858, 26));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -401,9 +399,10 @@ public:
         label_13->setText(QCoreApplication::translate("MainWindow", "Hours:", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_2), QCoreApplication::translate("MainWindow", "Payroll", nullptr));
         clearButton->setText(QCoreApplication::translate("MainWindow", "Clear All Tasks", nullptr));
+        urgentButton->setText(QCoreApplication::translate("MainWindow", "Enter", nullptr));
         label_4->setText(QCoreApplication::translate("MainWindow", "Enter a Task:", nullptr));
         label_8->setText(QCoreApplication::translate("MainWindow", "Urgent (Y/N):", nullptr));
-        urgentButton->setText(QCoreApplication::translate("MainWindow", "Enter", nullptr));
+        lineEdit->setText(QString());
         tabWidget->setTabText(tabWidget->indexOf(tab_4), QCoreApplication::translate("MainWindow", "Task Manager", nullptr));
         label_2->setText(QCoreApplication::translate("MainWindow", "Farmers' System Manager", nullptr));
     } // retranslateUi
