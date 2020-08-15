@@ -132,7 +132,7 @@ void MainWindow::displayInv(){
     }
 
     for(pair<QString, int> i:inventory.inventory){
-        ui->textBrowserInv->append(i.first + ": " + i.second + " $" + inventory.prices[i.first]);
+        ui->textBrowserInv->append(i.first + ": " + QString::number(i.second) + " $" + QString::number(inventory.prices[i.first]));
     }
     return;
 }
