@@ -30,7 +30,7 @@
      </font>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -221,11 +221,11 @@
      <attribute name="title">
       <string>Payroll</string>
      </attribute>
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QPushButton" name="PayEmpButton">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>200</y>
+        <x>320</x>
+        <y>470</y>
         <width>80</width>
         <height>22</height>
        </rect>
@@ -261,6 +261,11 @@
       <column>
        <property name="text">
         <string>Balance Owed</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>To Pay</string>
        </property>
       </column>
      </widget>
@@ -327,10 +332,10 @@
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_12">
        <item>
-        <widget class="QLineEdit" name="lineEditSalary"/>
+        <widget class="QLineEdit" name="lineEditEmployee"/>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEditEmployee"/>
+        <widget class="QLineEdit" name="lineEditSalary"/>
        </item>
        <item>
         <widget class="QLineEdit" name="lineEditHours"/>
@@ -441,6 +446,22 @@
     <hint type="destinationlabel">
      <x>626</x>
      <y>611</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>payButton_3</sender>
+   <signal>clicked()</signal>
+   <receiver>payrolltable</receiver>
+   <slot>update()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>490</x>
+     <y>203</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>621</x>
+     <y>313</y>
     </hint>
    </hints>
   </connection>

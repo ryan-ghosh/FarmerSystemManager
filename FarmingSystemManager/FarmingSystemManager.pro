@@ -17,10 +17,12 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     ReqClasses.cpp \
+    appmodel.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
+    appmodel.h \
     mainwindow.h
 
 FORMS += \
@@ -33,3 +35,19 @@ TRANSLATIONS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+DISTFILES += \
+    icons/README.txt \
+    icons/qt_attribution.json \
+    icons/weather-few-clouds.png \
+    icons/weather-fog.png \
+    icons/weather-haze.png \
+    icons/weather-icy.png \
+    icons/weather-overcast.png \
+    icons/weather-showers.png \
+    icons/weather-sleet.png \
+    icons/weather-snow.png \
+    icons/weather-storm.png \
+    icons/weather-sunny-very-few-clouds.png \
+    icons/weather-sunny.png \
+    icons/weather-thundershower.png

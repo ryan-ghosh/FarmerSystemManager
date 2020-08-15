@@ -28,6 +28,8 @@ private slots:
 
     void on_invButton_3_clicked();
 
+    void on_PayEmpButton_clicked();
+
 private:
     Ui::MainWindow *ui;
 

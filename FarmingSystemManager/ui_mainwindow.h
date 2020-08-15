@@ -62,8 +62,8 @@ public:
     QPushButton *payButton_3;
     QWidget *layoutWidget1;
     QVBoxLayout *verticalLayout_12;
-    QLineEdit *lineEditSalary;
     QLineEdit *lineEditEmployee;
+    QLineEdit *lineEditSalary;
     QLineEdit *lineEditHours;
     QWidget *tab_4;
     QWidget *layoutWidget2;
@@ -242,15 +242,15 @@ public:
         verticalLayout_12 = new QVBoxLayout(layoutWidget1);
         verticalLayout_12->setObjectName(QString::fromUtf8("verticalLayout_12"));
         verticalLayout_12->setContentsMargins(0, 0, 0, 0);
-        lineEditSalary = new QLineEdit(layoutWidget1);
-        lineEditSalary->setObjectName(QString::fromUtf8("lineEditSalary"));
-
-        verticalLayout_12->addWidget(lineEditSalary);
-
         lineEditEmployee = new QLineEdit(layoutWidget1);
         lineEditEmployee->setObjectName(QString::fromUtf8("lineEditEmployee"));
 
         verticalLayout_12->addWidget(lineEditEmployee);
+
+        lineEditSalary = new QLineEdit(layoutWidget1);
+        lineEditSalary->setObjectName(QString::fromUtf8("lineEditSalary"));
+
+        verticalLayout_12->addWidget(lineEditSalary);
 
         lineEditHours = new QLineEdit(layoutWidget1);
         lineEditHours->setObjectName(QString::fromUtf8("lineEditHours"));
@@ -321,8 +321,9 @@ public:
 
         retranslateUi(MainWindow);
         QObject::connect(invButton, SIGNAL(clicked()), invtable, SLOT(update()));
+        QObject::connect(payButton_3, SIGNAL(clicked()), payrolltable, SLOT(update()));
 
-        tabWidget->setCurrentIndex(1);
+        tabWidget->setCurrentIndex(2);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
