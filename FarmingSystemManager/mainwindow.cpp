@@ -22,6 +22,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) , ui(new Ui::MainW
 {
     ui->setupUi(this);
     createTabMenu();
+    ui->payrolltable->resizeColumnsToContents();
 }
 
 MainWindow::~MainWindow()
@@ -222,6 +223,16 @@ void MainWindow::displayPayroll(){
     ui->payrolltable->setItem(ui->payrolltable->rowCount()-1,2,ip);
     ui->payrolltable->setItem(ui->payrolltable->rowCount()-1,3,itp);
     ui->payrolltable->update();
+        
+    // checkbox
+
+    QCheckBox * cb = new QCheckBox();
+    ui->payrolltable->setCellWidget(ui->payrolltable->rowCount()-1,4,cb);
+    cb->setStyleSheet( "text-align: center; margin-left:50%; margin-right:50%;" );
+    if (cb->isChecked() == 0) {qDebug() << "ok";}
+
+    ui->payrolltable->resizeColumnsToContents();
+    ui->payrolltable->update();
     empcount++;
     return;
 }
@@ -240,3 +251,17 @@ void MainWindow::on_payButton_3_clicked()
     displayPayroll();
 }
 
+void MainWindow::on_PayEmpButton_clicked()
+{
+    for (int i = 0 ; i < ui->payrolltable->rowCount() ; ++i){
+        QCheckBox *box = new QCheckBox();
+        box = (QCheckBox*)ui->payrolltable->cellWidget(i,4);
+        if (box->isChecked()){
+            ui->payrolltable->setItem(i,2,new QTableWidgetItem(QString::number(0), 0));
+            ui->payrolltable->setItem(i,3,new QTableWidgetItem(QString::number(0), 0));
+        } else {
+            std::cout << "something fucked up" << std::endl;
+        }
+    }
+    return;
+}
