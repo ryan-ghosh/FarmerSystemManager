@@ -30,7 +30,7 @@
      </font>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -91,6 +91,21 @@
       <column>
        <property name="text">
         <string>Urgent Tasks</string>
+       </property>
+      </column>
+     </widget>
+     <widget class="QTableWidget" name="regularTaskTable">
+      <property name="geometry">
+       <rect>
+        <x>490</x>
+        <y>250</y>
+        <width>211</width>
+        <height>192</height>
+       </rect>
+      </property>
+      <column>
+       <property name="text">
+        <string>Regular Tasks</string>
        </property>
       </column>
      </widget>

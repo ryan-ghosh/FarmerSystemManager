@@ -34,6 +34,7 @@ private:
     void displayTasks();  //tasks shit
     void storeUrgentString();
     void displayUrgentTasks(int index);
+    void displayRegularTasks(int index);
 
     QString InvNameClick();
     int InvQuantClick();

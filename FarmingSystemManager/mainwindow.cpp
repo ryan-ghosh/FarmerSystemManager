@@ -81,11 +81,19 @@ void MainWindow::displayTasks() {
     for (int i = 0; i < taskLength; i++) {
         if (taskManager.tasks[i].second==1 && i==taskLength-1){
             displayUrgentTasks(i);
+        }else if(taskManager.tasks[i].second==0 && i==taskLength-1){
+            displayRegularTasks(i);
         }
         ui->textBrowser->append(QString::number(i + 1) + ". " + taskManager.tasks[taskLength - i - 1].first.task);
         qDebug() << taskManager.tasks[taskLength - i - 1].second;
     }
 
+    return;
+}
+void MainWindow::displayRegularTasks(int index){
+    QTableWidgetItem *in = new QTableWidgetItem(taskManager.tasks[index].first.task, 0);
+    ui->regularTaskTable->insertRow( ui->regularTaskTable->rowCount() );
+    ui->regularTaskTable->setItem(ui->regularTaskTable->rowCount()-1,0,in);
     return;
 }
 
@@ -203,7 +211,6 @@ float MainWindow::Salary(){
 void MainWindow::displayPayroll(){
 
     Employee *i = &payroll.employees[empcount];
-    std::cout << i->name.toStdString() << std::endl;
     QTableWidgetItem *in = new QTableWidgetItem(i->name, 0);
     QTableWidgetItem *iq = new QTableWidgetItem(QString::number(i->salary), 0);
     QTableWidgetItem *ip = new QTableWidgetItem(QString::number(i->hours), 0);
