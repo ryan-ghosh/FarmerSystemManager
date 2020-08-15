@@ -253,6 +253,7 @@ void MainWindow::on_payButton_3_clicked()
     displayPayroll();
 }
 
+
 void MainWindow::on_PayEmpButton_clicked()
 {
     for (int i = 0 ; i < ui->payrolltable->rowCount() ; ++i){

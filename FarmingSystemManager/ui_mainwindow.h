@@ -132,7 +132,7 @@ public:
         QTableWidgetItem *__qtablewidgetitem1 = new QTableWidgetItem();
         regularTaskTable->setHorizontalHeaderItem(0, __qtablewidgetitem1);
         regularTaskTable->setObjectName(QString::fromUtf8("regularTaskTable"));
-        regularTaskTable->setGeometry(QRect(490, 250, 141, 192));
+        regularTaskTable->setGeometry(QRect(490, 250, 211, 192));
         tabWidget->addTab(tab, QString());
         tab_3 = new QWidget();
         tab_3->setObjectName(QString::fromUtf8("tab_3"));
@@ -373,7 +373,7 @@ public:
         QObject::connect(invButton, SIGNAL(clicked()), invtable, SLOT(update()));
         QObject::connect(payButton_3, SIGNAL(clicked()), payrolltable, SLOT(update()));
 
-        tabWidget->setCurrentIndex(0);
+        tabWidget->setCurrentIndex(2);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -424,7 +424,7 @@ public:
         label_8->setText(QCoreApplication::translate("MainWindow", "Urgent (Y/N):", nullptr));
         lineEdit->setText(QString());
         tabWidget->setTabText(tabWidget->indexOf(tab_4), QCoreApplication::translate("MainWindow", "Task Manager", nullptr));
-        label_2->setText(QCoreApplication::translate("MainWindow", "Farmers' System Manager", nullptr));
+        label_2->setText(QCoreApplication::translate("MainWindow", "Sprout", nullptr));
     } // retranslateUi
 
 };
