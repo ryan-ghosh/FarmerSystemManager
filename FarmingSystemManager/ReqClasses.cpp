@@ -70,12 +70,12 @@ public:
 
 class Employee{
 public:
-    string name;
-    int salary;
-    int sickdays;
+    QString name;
+    float salary;
+    float hours;
     float deductions; //tax, late, missed over sick days
 
-    Employee(string a, int s) : name(a) , salary(s){}
+    Employee(QString a, float s, float h) : name(a) , salary(s), hours(h){}
 
     void employeeDeductions(float incomeTax, float federalTax){
         float first = incomeTax*salary;
@@ -88,10 +88,6 @@ class PayRollSystem{
 public:
     float cash;
     vector<Employee> employees;
-
-    PayRollSystem(float bank){
-        cash = bank;
-    }
 
     void payday(){
         for(Employee i : employees){

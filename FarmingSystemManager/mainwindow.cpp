@@ -18,7 +18,6 @@ int itemQuant;    // item quant
 float itemPrice; // item price
 
 
-//PayRollSystem payroll = PayRollSystem(10000.00);
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) , ui(new Ui::MainWindow)
 {
@@ -93,6 +92,7 @@ void MainWindow::clearTasks() {
 
 //START of Inventory Portion
 
+
 void MainWindow::on_invButton_clicked()
 {
     itemQuant = InvQuantClick();
@@ -160,3 +160,60 @@ void MainWindow::displayInv(){
 }
 
 //END of inventory portion
+
+//Start of payroll section
+
+QString EmployeeName;
+float salary;
+float hours;
+PayRollSystem payroll;
+
+
+QString MainWindow::EmployeeNames(){
+    QString submittedString = ui->lineEditEmployee->text();
+
+    if (submittedString.isEmpty()) {
+        return "";                             //cannot insert empty text into textBrowser
+    }
+
+    return submittedString;
+}
+
+float MainWindow::HoursWorked(){
+    return ui->lineEditHours->text().toFloat();
+}
+
+float MainWindow::Salary(){
+    return ui->lineEditSalary->text().toFloat();
+}
+
+void MainWindow::displayPayroll(){
+    std::vector<Employee>::iterator i = payroll.employees.begin();
+    QTableWidgetItem *in = new QTableWidgetItem(i->name, 0);
+    QTableWidgetItem *iq = new QTableWidgetItem(QString::number(i->salary), 0);
+    QTableWidgetItem *ip = new QTableWidgetItem(QString::number(i->hours), 0);
+    QTableWidgetItem *itp = new QTableWidgetItem(QString::number(i->hours * i->salary), 0);
+    ui->payrolltable->insertRow( ui->payrolltable->rowCount() );
+    ui->payrolltable->setItem(ui->payrolltable->rowCount()-1,1,in);
+    ui->payrolltable->setItem(ui->payrolltable->rowCount()-1,2,iq);
+    ui->payrolltable->setItem(ui->payrolltable->rowCount()-1,2,ip);
+    ui->payrolltable->setItem(ui->payrolltable->rowCount()-1,3,itp);
+    ui->payrolltable->update();
+    i++;
+    return;
+}
+
+
+void MainWindow::on_payButton_3_clicked()
+{
+    EmployeeName = EmployeeNames();
+    ui->lineEditEmployee->clear();
+    salary = Salary();
+    ui->lineEditSalary->clear();
+    hours = HoursWorked();
+    ui->lineEditHours->clear();
+
+    Employee chad = Employee(EmployeeName, salary, hours);
+    payroll.employees.push_back(chad);
+    displayPayroll();
+}

@@ -24,6 +24,10 @@ private slots:
 
     void on_invtable_cellChanged(int row, int column);
 
+    void on_payButton_3_clicked();      // payroll
+
+    void on_invButton_3_clicked();
+
 private:
     Ui::MainWindow *ui;
 
@@ -35,5 +39,10 @@ private:
     int InvQuantClick();
     float InvPriceClick();      //inventory shit
     void displayInv();
+
+    QString EmployeeNames();     //payroll
+    float HoursWorked();
+    float Salary();
+    void displayPayroll();
 };
 #endif // MAINWINDOW_H

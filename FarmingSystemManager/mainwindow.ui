@@ -17,8 +17,8 @@
    <widget class="QTabWidget" name="tabWidget">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>80</y>
+      <x>120</x>
+      <y>110</y>
       <width>1122</width>
       <height>591</height>
      </rect>
@@ -30,7 +30,7 @@
      </font>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -90,7 +90,7 @@
         <x>60</x>
         <y>10</y>
         <width>481</width>
-        <height>171</height>
+        <height>201</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_7">
@@ -222,6 +222,122 @@
      <attribute name="title">
       <string>Payroll</string>
      </attribute>
+     <widget class="QPushButton" name="pushButton">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>200</y>
+        <width>80</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Pay</string>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="payrolltable">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>120</y>
+        <width>551</width>
+        <height>321</height>
+       </rect>
+      </property>
+      <column>
+       <property name="text">
+        <string>Employee</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Salary</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Hours</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Balance Owed</string>
+       </property>
+      </column>
+     </widget>
+     <widget class="QLabel" name="label_11">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>10</y>
+        <width>82</width>
+        <height>29</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Employee:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_12">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>50</y>
+        <width>51</width>
+        <height>29</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Salary:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_13">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>80</y>
+        <width>51</width>
+        <height>29</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Hours:</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="payButton_3">
+      <property name="geometry">
+       <rect>
+        <x>430</x>
+        <y>50</y>
+        <width>80</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Enter</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>10</y>
+        <width>291</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_12">
+       <item>
+        <widget class="QLineEdit" name="lineEditSalary"/>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="lineEditEmployee"/>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="lineEditHours"/>
+       </item>
+      </layout>
+     </widget>
     </widget>
     <widget class="QWidget" name="tab_4">
      <attribute name="title">

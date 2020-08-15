@@ -59,6 +59,17 @@ public:
     QHBoxLayout *horizontalLayout_5;
     QTableWidget *invtable;
     QWidget *tab_2;
+    QPushButton *pushButton;
+    QTableWidget *payrolltable;
+    QLabel *label_11;
+    QLabel *label_12;
+    QLabel *label_13;
+    QPushButton *payButton_3;
+    QWidget *widget;
+    QVBoxLayout *verticalLayout_12;
+    QLineEdit *lineEditSalary;
+    QLineEdit *lineEditEmployee;
+    QLineEdit *lineEditHours;
     QWidget *tab_4;
     QWidget *layoutWidget1;
     QVBoxLayout *verticalLayout_2;
@@ -82,7 +93,7 @@ public:
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         tabWidget = new QTabWidget(centralwidget);
         tabWidget->setObjectName(QString::fromUtf8("tabWidget"));
-        tabWidget->setGeometry(QRect(0, 80, 1122, 591));
+        tabWidget->setGeometry(QRect(120, 110, 1122, 591));
         QFont font;
         font.setFamily(QString::fromUtf8("Segoe UI"));
         font.setPointSize(12);
@@ -111,7 +122,7 @@ public:
         tab_3->setObjectName(QString::fromUtf8("tab_3"));
         layoutWidget = new QWidget(tab_3);
         layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
-        layoutWidget->setGeometry(QRect(60, 10, 481, 171));
+        layoutWidget->setGeometry(QRect(60, 10, 481, 201));
         verticalLayout_7 = new QVBoxLayout(layoutWidget);
         verticalLayout_7->setObjectName(QString::fromUtf8("verticalLayout_7"));
         verticalLayout_7->setContentsMargins(0, 0, 0, 0);
@@ -226,6 +237,55 @@ public:
         tabWidget->addTab(tab_3, QString());
         tab_2 = new QWidget();
         tab_2->setObjectName(QString::fromUtf8("tab_2"));
+        pushButton = new QPushButton(tab_2);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        pushButton->setGeometry(QRect(10, 200, 80, 22));
+        payrolltable = new QTableWidget(tab_2);
+        if (payrolltable->columnCount() < 4)
+            payrolltable->setColumnCount(4);
+        QTableWidgetItem *__qtablewidgetitem4 = new QTableWidgetItem();
+        payrolltable->setHorizontalHeaderItem(0, __qtablewidgetitem4);
+        QTableWidgetItem *__qtablewidgetitem5 = new QTableWidgetItem();
+        payrolltable->setHorizontalHeaderItem(1, __qtablewidgetitem5);
+        QTableWidgetItem *__qtablewidgetitem6 = new QTableWidgetItem();
+        payrolltable->setHorizontalHeaderItem(2, __qtablewidgetitem6);
+        QTableWidgetItem *__qtablewidgetitem7 = new QTableWidgetItem();
+        payrolltable->setHorizontalHeaderItem(3, __qtablewidgetitem7);
+        payrolltable->setObjectName(QString::fromUtf8("payrolltable"));
+        payrolltable->setGeometry(QRect(110, 120, 551, 321));
+        label_11 = new QLabel(tab_2);
+        label_11->setObjectName(QString::fromUtf8("label_11"));
+        label_11->setGeometry(QRect(20, 10, 82, 29));
+        label_12 = new QLabel(tab_2);
+        label_12->setObjectName(QString::fromUtf8("label_12"));
+        label_12->setGeometry(QRect(50, 50, 51, 29));
+        label_13 = new QLabel(tab_2);
+        label_13->setObjectName(QString::fromUtf8("label_13"));
+        label_13->setGeometry(QRect(50, 80, 51, 29));
+        payButton_3 = new QPushButton(tab_2);
+        payButton_3->setObjectName(QString::fromUtf8("payButton_3"));
+        payButton_3->setGeometry(QRect(430, 50, 80, 30));
+        widget = new QWidget(tab_2);
+        widget->setObjectName(QString::fromUtf8("widget"));
+        widget->setGeometry(QRect(110, 10, 291, 101));
+        verticalLayout_12 = new QVBoxLayout(widget);
+        verticalLayout_12->setObjectName(QString::fromUtf8("verticalLayout_12"));
+        verticalLayout_12->setContentsMargins(0, 0, 0, 0);
+        lineEditSalary = new QLineEdit(widget);
+        lineEditSalary->setObjectName(QString::fromUtf8("lineEditSalary"));
+
+        verticalLayout_12->addWidget(lineEditSalary);
+
+        lineEditEmployee = new QLineEdit(widget);
+        lineEditEmployee->setObjectName(QString::fromUtf8("lineEditEmployee"));
+
+        verticalLayout_12->addWidget(lineEditEmployee);
+
+        lineEditHours = new QLineEdit(widget);
+        lineEditHours->setObjectName(QString::fromUtf8("lineEditHours"));
+
+        verticalLayout_12->addWidget(lineEditHours);
+
         tabWidget->addTab(tab_2, QString());
         tab_4 = new QWidget();
         tab_4->setObjectName(QString::fromUtf8("tab_4"));
@@ -291,7 +351,7 @@ public:
         retranslateUi(MainWindow);
         QObject::connect(invButton, SIGNAL(clicked()), invtable, SLOT(update()));
 
-        tabWidget->setCurrentIndex(1);
+        tabWidget->setCurrentIndex(2);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -315,6 +375,19 @@ public:
         QTableWidgetItem *___qtablewidgetitem3 = invtable->horizontalHeaderItem(3);
         ___qtablewidgetitem3->setText(QCoreApplication::translate("MainWindow", "Total Price", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_3), QCoreApplication::translate("MainWindow", "Inventory", nullptr));
+        pushButton->setText(QCoreApplication::translate("MainWindow", "Pay", nullptr));
+        QTableWidgetItem *___qtablewidgetitem4 = payrolltable->horizontalHeaderItem(0);
+        ___qtablewidgetitem4->setText(QCoreApplication::translate("MainWindow", "Employee", nullptr));
+        QTableWidgetItem *___qtablewidgetitem5 = payrolltable->horizontalHeaderItem(1);
+        ___qtablewidgetitem5->setText(QCoreApplication::translate("MainWindow", "Salary", nullptr));
+        QTableWidgetItem *___qtablewidgetitem6 = payrolltable->horizontalHeaderItem(2);
+        ___qtablewidgetitem6->setText(QCoreApplication::translate("MainWindow", "Hours", nullptr));
+        QTableWidgetItem *___qtablewidgetitem7 = payrolltable->horizontalHeaderItem(3);
+        ___qtablewidgetitem7->setText(QCoreApplication::translate("MainWindow", "Balance Owed", nullptr));
+        label_11->setText(QCoreApplication::translate("MainWindow", "Employee:", nullptr));
+        label_12->setText(QCoreApplication::translate("MainWindow", "Salary:", nullptr));
+        label_13->setText(QCoreApplication::translate("MainWindow", "Hours:", nullptr));
+        payButton_3->setText(QCoreApplication::translate("MainWindow", "Enter", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_2), QCoreApplication::translate("MainWindow", "Payroll", nullptr));
         label_4->setText(QCoreApplication::translate("MainWindow", "Enter a Task:", nullptr));
         goButton->setText(QCoreApplication::translate("MainWindow", "Go", nullptr));
