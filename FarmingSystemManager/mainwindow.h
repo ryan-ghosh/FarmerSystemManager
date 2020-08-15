@@ -25,6 +25,8 @@ private slots:
     void on_payButton_3_clicked();      // payroll
 
     void on_urgentButton_clicked();
+    
+    void on_urgentButton_clicked();
 
 private:
     Ui::MainWindow *ui;
