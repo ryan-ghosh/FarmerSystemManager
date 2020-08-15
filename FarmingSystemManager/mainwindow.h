@@ -22,11 +22,7 @@ private slots:
 
     void on_invButton_clicked();        // inventory shit
 
-    void on_invtable_cellChanged(int row, int column);
-
     void on_payButton_3_clicked();      // payroll
-
-    void on_invButton_3_clicked();
 
     void on_PayEmpButton_clicked();
 

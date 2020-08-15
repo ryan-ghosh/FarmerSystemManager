@@ -17,12 +17,10 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     ReqClasses.cpp \
-    appmodel.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
-    appmodel.h \
     mainwindow.h
 
 FORMS += \
