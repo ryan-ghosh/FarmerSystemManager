@@ -462,7 +462,7 @@
      </font>
     </property>
     <property name="text">
-     <string>Farmers' System Manager</string>
+     <string>Sprout</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
