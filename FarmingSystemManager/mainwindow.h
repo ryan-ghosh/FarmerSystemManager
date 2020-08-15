@@ -33,6 +33,7 @@ private:
     void clearTasks();
     void displayTasks();  //tasks shit
     void storeUrgentString();
+    void displayUrgentTasks(int index);
 
     QString InvNameClick();
     int InvQuantClick();

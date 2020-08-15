@@ -79,10 +79,20 @@ void MainWindow::displayTasks() {
     }
 
     for (int i = 0; i < taskLength; i++) {
+        if (taskManager.tasks[i].second==1 && i==taskLength-1){
+            displayUrgentTasks(i);
+        }
         ui->textBrowser->append(QString::number(i + 1) + ". " + taskManager.tasks[taskLength - i - 1].first.task);
         qDebug() << taskManager.tasks[taskLength - i - 1].second;
     }
 
+    return;
+}
+
+void MainWindow::displayUrgentTasks(int index){
+    QTableWidgetItem *in = new QTableWidgetItem(taskManager.tasks[index].first.task, 0);
+    ui->urgentTaskTable->insertRow( ui->urgentTaskTable->rowCount() );
+    ui->urgentTaskTable->setItem(ui->urgentTaskTable->rowCount()-1,0,in);
     return;
 }
 

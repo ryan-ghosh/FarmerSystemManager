@@ -84,10 +84,15 @@
        <rect>
         <x>90</x>
         <y>80</y>
-        <width>256</width>
+        <width>181</width>
         <height>192</height>
        </rect>
       </property>
+      <column>
+       <property name="text">
+        <string>Urgent Tasks</string>
+       </property>
+      </column>
      </widget>
     </widget>
     <widget class="QWidget" name="tab_3">
@@ -373,7 +378,7 @@
        <string>Enter</string>
       </property>
      </widget>
-     <widget class="QWidget" name="">
+     <widget class="QWidget" name="layoutWidget">
       <property name="geometry">
        <rect>
         <x>100</x>
@@ -455,7 +460,7 @@
      <x>0</x>
      <y>0</y>
      <width>858</width>
-     <height>26</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>
