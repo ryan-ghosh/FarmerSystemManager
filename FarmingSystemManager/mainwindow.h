@@ -22,6 +22,8 @@ private slots:
 
     void on_invButton_clicked();        // inventory shit
 
+    void on_invtable_cellChanged(int row, int column);
+
 private:
     Ui::MainWindow *ui;
 

@@ -3,7 +3,11 @@
 #include "ReqClasses.cpp"
 
 #include <iostream>
+#include <string>
 #include <QTabWidget>
+#include <QTableWidget>
+#include <QTableWidgetItem>
+
 
 
 TaskManager taskManager = TaskManager();
@@ -13,14 +17,14 @@ QString itemName;  // item name
 int itemQuant;    // item quant
 float itemPrice; // item price
 
+
 //PayRollSystem payroll = PayRollSystem(10000.00);
 
-MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent)
-    , ui(new Ui::MainWindow)
+MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
     createTabMenu();
+    //QTableWidget *invtable = new QTableWidget();
 }
 
 MainWindow::~MainWindow()
@@ -84,11 +88,9 @@ void MainWindow::clearTasks() {
     return;
 }
 
-
 //END of Ahmed's Portion
-//
-//
-//
+
+
 //START of Inventory Portion
 
 void MainWindow::on_invButton_clicked()
@@ -102,10 +104,16 @@ void MainWindow::on_invButton_clicked()
     itemPrice = InvPriceClick();
     ui->lineEditPrice->clear();
 
+    //QTableWidgetItem *iq = new QTableWidgetItem(QString::number(InvQuantClick()));
+    //std::cout << itemQuant << std::endl;
+    //ui->invtable->setItem(1,1,iq);
+
     Item item = Item(itemName,itemPrice);
     inventory.addItem(item, itemQuant);
 
     displayInv();
+
+
 }
 
 QString MainWindow::InvNameClick(){
@@ -127,13 +135,27 @@ float MainWindow::InvPriceClick(){
 }
 
 void MainWindow::displayInv(){
-    if (not ui->textBrowserInv->toPlainText().isEmpty()){
+    /*if (not ui->textBrowserInv->toPlainText().isEmpty()){
         ui->textBrowserInv->clear();           //clear textBrowser if not empty
     }
 
     for(pair<QString, int> i:inventory.inventory){
         ui->textBrowserInv->append(i.first + ": " + QString::number(i.second) + " $" + QString::number(inventory.prices[i.first]));
-    }
+    }*/
+
+    std::unordered_map<QString, int>::iterator it = inventory.inventory.begin();
+
+    QTableWidgetItem *in = new QTableWidgetItem(it->first, 0);
+    QTableWidgetItem *iq = new QTableWidgetItem(QString::number(it->second), 0);
+    QTableWidgetItem *ip = new QTableWidgetItem(QString::number(inventory.prices[it->first]), 0);
+    QTableWidgetItem *itp = new QTableWidgetItem(QString::number(it->second * inventory.prices[it->first]), 0);
+    ui->invtable->insertRow( ui->invtable->rowCount() );
+    ui->invtable->setItem(ui->invtable->rowCount()-1,0,in);
+    ui->invtable->setItem(ui->invtable->rowCount()-1,1,iq);
+    ui->invtable->setItem(ui->invtable->rowCount()-1,2,ip);
+    ui->invtable->setItem(ui->invtable->rowCount()-1,3,itp);
+    ui->invtable->update();
+    it++;
     return;
 }
 
