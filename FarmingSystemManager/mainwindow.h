@@ -17,25 +17,21 @@ public:
     void createTabMenu();
 
 private slots:
-    void on_pushButton_clicked();
-    void on_pushButton_2_clicked();
+    void on_goButton_clicked();
+    void on_clearButton_clicked();      // tasks shit
 
-    void on_pushButton_3_clicked();
-
-    void on_pushButton_4_clicked();
-
-    void on_pushButton_5_clicked();
-
-    void on_pushButton_6_clicked();
+    void on_invButton_clicked();        // inventory shit
 
 private:
     Ui::MainWindow *ui;
+
     void storeInputString();
     void clearTasks();
-    void displayTasks();
+    void displayTasks();        //tasks shit
+
     QString InvNameClick();
     int InvQuantClick();
-    float InvPriceClick();
+    float InvPriceClick();      //inventory shit
     void displayInv();
 };
 #endif // MAINWINDOW_H

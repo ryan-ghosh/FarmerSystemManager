@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>878</width>
-    <height>686</height>
+    <width>858</width>
+    <height>700</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,10 +17,10 @@
    <widget class="QTabWidget" name="tabWidget">
     <property name="geometry">
      <rect>
-      <x>70</x>
-      <y>110</y>
-      <width>800</width>
-      <height>600</height>
+      <x>0</x>
+      <y>80</y>
+      <width>1122</width>
+      <height>591</height>
      </rect>
     </property>
     <property name="font">
@@ -30,7 +30,7 @@
      </font>
     </property>
     <property name="currentIndex">
-     <number>3</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -79,152 +79,96 @@
        <string>Welcome!!</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton">
-      <property name="geometry">
-       <rect>
-        <x>220</x>
-        <y>230</y>
-        <width>111</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>PushButton</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_3">
-      <property name="geometry">
-       <rect>
-        <x>230</x>
-        <y>180</y>
-        <width>101</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-     <widget class="QLabel" name="labelaz">
-      <property name="geometry">
-       <rect>
-        <x>250</x>
-        <y>183</y>
-        <width>51</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
     </widget>
     <widget class="QWidget" name="tab_3">
      <attribute name="title">
       <string>Inventory</string>
      </attribute>
-     <widget class="QTextBrowser" name="textBrowser_2">
+     <widget class="QWidget" name="">
       <property name="geometry">
        <rect>
-        <x>40</x>
-        <y>120</y>
-        <width>101</width>
-        <height>192</height>
+        <x>60</x>
+        <y>70</y>
+        <width>481</width>
+        <height>345</height>
        </rect>
       </property>
-     </widget>
-     <widget class="QTextBrowser" name="textBrowser_3">
-      <property name="geometry">
-       <rect>
-        <x>140</x>
-        <y>120</y>
-        <width>111</width>
-        <height>192</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QTextBrowser" name="textBrowser_4">
-      <property name="geometry">
-       <rect>
-        <x>250</x>
-        <y>120</y>
-        <width>111</width>
-        <height>192</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QWidget" name="layoutWidget">
-      <property name="geometry">
-       <rect>
-        <x>40</x>
-        <y>10</y>
-        <width>321</width>
-        <height>110</height>
-       </rect>
-      </property>
-      <layout class="QVBoxLayout" name="verticalLayout_3">
+      <layout class="QVBoxLayout" name="verticalLayout_7">
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <layout class="QVBoxLayout" name="verticalLayout_5">
          <item>
-          <widget class="QLabel" name="label_5">
-           <property name="text">
-            <string>Item Name:</string>
-           </property>
-          </widget>
+          <layout class="QHBoxLayout" name="horizontalLayout_2"/>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit_2"/>
+          <layout class="QHBoxLayout" name="horizontalLayout_4">
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout_4">
+             <item>
+              <widget class="QLabel" name="label_5">
+               <property name="text">
+                <string>Item Name:</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_6">
+               <property name="text">
+                <string>Quantity:</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_7">
+               <property name="text">
+                <string>Price:</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout_6">
+             <item>
+              <widget class="QLineEdit" name="lineEditName"/>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEditQuant"/>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEditPrice"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout_3">
+             <item>
+              <widget class="QPushButton" name="invButton">
+               <property name="text">
+                <string>GO</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton_4">
-           <property name="text">
-            <string>Go</string>
-           </property>
-          </widget>
+          <layout class="QHBoxLayout" name="horizontalLayout_3">
+           <item>
+            <widget class="QTextBrowser" name="textBrowserInv"/>
+           </item>
+           <item>
+            <widget class="QTextBrowser" name="textBrowser_4"/>
+           </item>
+           <item>
+            <widget class="QTextBrowser" name="textBrowser_3"/>
+           </item>
+          </layout>
          </item>
         </layout>
        </item>
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_3">
-         <item>
-          <widget class="QLabel" name="label_6">
-           <property name="text">
-            <string>Quantity:    </string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="lineEdit_3"/>
-         </item>
-         <item>
-          <widget class="QPushButton" name="pushButton_5">
-           <property name="text">
-            <string>Go</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_4">
-         <item>
-          <widget class="QLabel" name="label_7">
-           <property name="text">
-            <string>Price:          </string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="lineEdit_4"/>
-         </item>
-         <item>
-          <widget class="QPushButton" name="pushButton_6">
-           <property name="text">
-            <string>Go</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
+        <layout class="QHBoxLayout" name="horizontalLayout_5"/>
        </item>
       </layout>
      </widget>
@@ -241,10 +185,10 @@
      <widget class="QWidget" name="layoutWidget">
       <property name="geometry">
        <rect>
-        <x>50</x>
-        <y>20</y>
-        <width>406</width>
-        <height>286</height>
+        <x>10</x>
+        <y>10</y>
+        <width>691</width>
+        <height>501</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -263,7 +207,7 @@
             <widget class="QLineEdit" name="lineEdit"/>
            </item>
            <item>
-            <widget class="QPushButton" name="pushButton_2">
+            <widget class="QPushButton" name="goButton">
              <property name="text">
               <string>Go</string>
              </property>
@@ -277,7 +221,7 @@
         </layout>
        </item>
        <item>
-        <widget class="QPushButton" name="pushButton_3">
+        <widget class="QPushButton" name="clearButton">
          <property name="text">
           <string>Clear All Tasks</string>
          </property>
@@ -315,8 +259,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>878</width>
-     <height>21</height>
+     <width>858</width>
+     <height>26</height>
     </rect>
    </property>
   </widget>

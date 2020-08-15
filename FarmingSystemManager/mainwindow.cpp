@@ -1,17 +1,19 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include <iostream>
-#include <QTabWidget>
 #include "ReqClasses.cpp"
 
-int k = 0;
-QStringList taskList = {};
-Inventory inventory = Inventory();
-QString holla;  // item name
-int boi;    // item quant
-float bruh; // item price
-//PayRollSystem payroll = PayRollSystem(10000.00);
+#include <iostream>
+#include <QTabWidget>
 
+
+TaskManager taskManager = TaskManager();
+Inventory inventory = Inventory();
+
+QString itemName;  // item name
+int itemQuant;    // item quant
+float itemPrice; // item price
+
+//PayRollSystem payroll = PayRollSystem(10000.00);
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -32,20 +34,16 @@ void MainWindow::createTabMenu(){
     tabs->addTab(new QWidget(), "TAB 2");
 }
 
-void MainWindow::on_pushButton_clicked()
-{
-    k += 1;
-    ui->labelaz->setText(QString::number(k));
-}
+//START of Ahmed's Portion
 
-void MainWindow::on_pushButton_2_clicked()
+void MainWindow::on_goButton_clicked()
 {
     storeInputString();
     displayTasks();
     ui->lineEdit->clear();
 }
 
-void MainWindow::on_pushButton_3_clicked()
+void MainWindow::on_clearButton_clicked()
 {
     clearTasks();
 }
@@ -57,7 +55,9 @@ void MainWindow::storeInputString(){
         return;                             //cannot insert empty text into textBrowser
     }
 
-    taskList.append(submittedString);
+    Task task = Task(submittedString);
+    taskManager.addTask(submittedString);
+
     return;
 }
 
@@ -66,47 +66,51 @@ void MainWindow::displayTasks() {
         ui->textBrowser->clear();           //clear textBrowser if not empty
     }
 
-    for (int i = 0; i < taskList.length(); i++) {
-        ui->textBrowser->append(QString::number(i + 1) + ". " + taskList.at(taskList.length() - i - 1));
+    int taskLength = (int)taskManager.tasks.size();
+
+    for (int i = 0; i < taskLength; i++) {
+        ui->textBrowser->append(QString::number(i + 1) + ". " + taskManager.tasks[taskLength - i - 1].task);
     }
 
     return;
 }
 
 void MainWindow::clearTasks() {
-    if(not taskList.isEmpty()){
-        taskList.clear();
+    if(not taskManager.tasks.empty()){
+        taskManager.tasks.clear();
     }
 
     ui->textBrowser->clear();
     return;
 }
 
-// inventory screen
 
-void MainWindow::on_pushButton_4_clicked()  // inventory item name
-{
-    holla = InvNameClick();
-    ui->lineEdit->clear();
-}
+//END of Ahmed's Portion
+//
+//
+//
+//START of Inventory Portion
 
-void MainWindow::on_pushButton_5_clicked()  // item quant
+void MainWindow::on_invButton_clicked()
 {
-    boi = InvQuantClick();
-    ui->lineEdit->clear();
-}
+    itemQuant = InvQuantClick();
+    ui->lineEditQuant->clear();
 
-void MainWindow::on_pushButton_6_clicked()  // item price
-{
-    bruh = InvPriceClick();
-    Item item = Item(holla,bruh);
-    inventory.addItem(item, boi);
-    ui->lineEdit->clear();
+    itemName = InvNameClick();
+    ui->lineEditName->clear();
+
+    itemPrice = InvPriceClick();
+    ui->lineEditPrice->clear();
+
+    Item item = Item(itemName,itemPrice);
+    inventory.addItem(item, itemQuant);
+
     displayInv();
 }
 
 QString MainWindow::InvNameClick(){
-    QString submittedString = ui->lineEdit->text();
+    QString submittedString = ui->lineEditName->text();
+
     if (submittedString.isEmpty()) {
         return "";                             //cannot insert empty text into textBrowser
     }
@@ -115,21 +119,22 @@ QString MainWindow::InvNameClick(){
 }
 
 int MainWindow::InvQuantClick(){
-    int quant = ui->lineEdit->text().toInt();
-    return quant;
+    return ui->lineEditQuant->text().toInt();
 }
+
 float MainWindow::InvPriceClick(){
-    float price = ui->lineEdit->text().toFloat();
-    return price;
+    return ui->lineEditPrice->text().toFloat();
 }
 
 void MainWindow::displayInv(){
-    if (not ui->textBrowser->toPlainText().isEmpty()){
-        ui->textBrowser->clear();           //clear textBrowser if not empty
+    if (not ui->textBrowserInv->toPlainText().isEmpty()){
+        ui->textBrowserInv->clear();           //clear textBrowser if not empty
     }
 
     for(pair<QString, int> i:inventory.inventory){
-        ui->textBrowser->append(i.first + ": " + i.second + " $" + inventory.prices[i.first]);
+        ui->textBrowserInv->append(i.first + ": " + i.second + " $" + inventory.prices[i.first]);
     }
     return;
 }
+
+//END of inventory portion

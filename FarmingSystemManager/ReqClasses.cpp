@@ -9,8 +9,6 @@
 
 using namespace std;
 
-//float money;
-
 class Item{
     public:
     float price;
@@ -104,9 +102,9 @@ public:
 
 class Task{
     public:
-    string task;
+    QString task;
     bool isDone = false;
-    Task(string t){
+    Task(QString t){
         task = t;
     }
 };
@@ -121,7 +119,7 @@ class TaskManager{
 
     void finishTask(string title){
         for (Task c : tasks){
-            if(c.task==title){
+            if(c.task.toStdString()==title){
                 c.isDone=true;
             }
         }
