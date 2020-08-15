@@ -17,7 +17,7 @@
    <widget class="QTabWidget" name="tabWidget">
     <property name="geometry">
      <rect>
-      <x>20</x>
+      <x>-20</x>
       <y>80</y>
       <width>801</width>
       <height>591</height>
@@ -30,7 +30,7 @@
      </font>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>3</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -282,7 +282,7 @@
        <string>Enter</string>
       </property>
      </widget>
-     <widget class="QWidget" name="">
+     <widget class="QWidget" name="layoutWidget">
       <property name="geometry">
        <rect>
         <x>20</x>
@@ -337,13 +337,26 @@
      <attribute name="title">
       <string>Task Manager</string>
      </attribute>
-     <widget class="QWidget" name="layoutWidget">
+     <widget class="QPushButton" name="clearButton">
+      <property name="geometry">
+       <rect>
+        <x>11</x>
+        <y>480</y>
+        <width>107</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Clear All Tasks</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="">
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>10</y>
-        <width>691</width>
-        <height>501</height>
+        <y>12</y>
+        <width>317</width>
+        <height>272</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -371,16 +384,30 @@
           </layout>
          </item>
          <item>
-          <widget class="QTextBrowser" name="textBrowser"/>
+          <layout class="QHBoxLayout" name="horizontalLayout_3">
+           <item>
+            <widget class="QLabel" name="label_8">
+             <property name="text">
+              <string>Urgent (Y/N):</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="lineEdit_2"/>
+           </item>
+           <item>
+            <widget class="QPushButton" name="pushButton">
+             <property name="text">
+              <string>Enter</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
         </layout>
        </item>
        <item>
-        <widget class="QPushButton" name="clearButton">
-         <property name="text">
-          <string>Clear All Tasks</string>
-         </property>
-        </widget>
+        <widget class="QTextBrowser" name="textBrowser"/>
        </item>
       </layout>
      </widget>
@@ -415,7 +442,7 @@
      <x>0</x>
      <y>0</y>
      <width>858</width>
-     <height>26</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>

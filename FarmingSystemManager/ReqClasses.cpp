@@ -107,35 +107,17 @@ class Task{
 
 class TaskManager{
     public:
-    vector<Task> tasks;
+    vector<pair<Task,int>> tasks;
 
-    void addTask(Task task){
-        tasks.pb(task);
+    void addTask(Task task, int imp){
+        tasks.pb(pair<Task,int> (task, imp));
     }
 
-    void finishTask(string title){
-        for (Task c : tasks){
-            if(c.task.toStdString()==title){
-                c.isDone=true;
-            }
-        }
-    }
+//    void finishTask(string title){
+//        for (Task c : tasks){
+//            if(c.task.toStdString()==title){
+//                c.isDone=true;
+//            }
+//        }
+//    }
 };
-
-
-// int main(){
-//     Inventory inventory;
-//     Item apples = Item("apples", 0.50);
-//     Item bananas = Item("bananas", 0.67);
-//     Item cheetos = Item("cheetos", 4.00);
-//     Item fuck = Item("fuck", 0.00);
-//     inventory.addItem(apples, 10);
-//     inventory.showInventory();
-//     inventory.addItem(bananas, 30);
-//     inventory.addItem(cheetos, 500);
-//     inventory.addItem(fuck, 0);
-//     inventory.showInventory();
-//     cout << inventory.totalPrice("bananas") << endl;
-//     cout << inventory.totalInventoryValue();
-//     return 0;
-// }
