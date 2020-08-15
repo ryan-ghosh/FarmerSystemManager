@@ -6,6 +6,7 @@
 #include "mainwindow.h"
 
 #define pb push_back
+#define index(a, c) distance((a).begin(), find((a).begin(), (a).end(), (c)))
 
 using namespace std;
 
@@ -113,11 +114,11 @@ class TaskManager{
         tasks.pb(pair<Task,int> (task, imp));
     }
 
-//    void finishTask(string title){
-//        for (Task c : tasks){
-//            if(c.task.toStdString()==title){
-//                c.isDone=true;
-//            }
-//        }
-//    }
+    void finishTask(QString title){
+        for (int i=0;i<(int)tasks.size();i++){
+            if (tasks[i].first.task==title){
+                tasks[i].first.isDone = true;
+            }
+        }
+    }
 };
