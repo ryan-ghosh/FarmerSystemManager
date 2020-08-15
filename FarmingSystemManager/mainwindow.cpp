@@ -82,6 +82,8 @@ void MainWindow::clearTasks() {
     return;
 }
 
+// inventory screen
+
 void MainWindow::on_pushButton_4_clicked()  // inventory item name
 {
     holla = InvNameClick();
