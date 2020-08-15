@@ -8,6 +8,8 @@
 #include <QTableWidget>
 #include <QTableWidgetItem>
 #include <QtDebug>
+#include <QCheckBox>
+#include <QAbstractButton>
 
 TaskManager taskManager = TaskManager();
 Inventory inventory = Inventory();
