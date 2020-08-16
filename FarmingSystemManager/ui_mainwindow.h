@@ -14,6 +14,7 @@
 #include <QtWidgets/QCalendarWidget>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
+#include <QtWidgets/QLCDNumber>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
@@ -36,16 +37,19 @@ public:
     QCalendarWidget *calendarWidget;
     QLabel *label_27;
     QLabel *label_28;
-    QWidget *widget;
-    QHBoxLayout *horizontalLayout_9;
+    QWidget *layoutWidget;
+    QHBoxLayout *horizontalLayout_3;
     QTableWidget *urgentTaskTable;
     QTableWidget *regularTaskTable;
+    QLabel *label;
+    QLCDNumber *lcdNumber;
+    QLabel *label_2;
     QWidget *tab_3;
     QTableWidget *invtable;
     QLabel *label_18;
     QLabel *label_19;
     QPushButton *PayEmpButton_2;
-    QWidget *widget1;
+    QWidget *layoutWidget1;
     QVBoxLayout *verticalLayout_2;
     QLabel *label_3;
     QVBoxLayout *verticalLayout_7;
@@ -66,7 +70,7 @@ public:
     QTableWidget *payrolltable;
     QLabel *label_10;
     QLabel *label_17;
-    QWidget *widget2;
+    QWidget *layoutWidget2;
     QVBoxLayout *verticalLayout_9;
     QLabel *label_9;
     QHBoxLayout *horizontalLayout;
@@ -86,7 +90,7 @@ public:
     QLabel *label_24;
     QTableWidget *tasktable;
     QPushButton *pushButton_2;
-    QWidget *widget3;
+    QWidget *layoutWidget3;
     QVBoxLayout *verticalLayout_10;
     QLabel *label_25;
     QVBoxLayout *verticalLayout;
@@ -105,12 +109,12 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(858, 718);
+        MainWindow->resize(859, 745);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         tabWidget = new QTabWidget(centralwidget);
         tabWidget->setObjectName(QString::fromUtf8("tabWidget"));
-        tabWidget->setGeometry(QRect(20, 80, 801, 591));
+        tabWidget->setGeometry(QRect(20, 80, 811, 611));
         QFont font;
         font.setFamily(QString::fromUtf8("Segoe UI"));
         font.setPointSize(12);
@@ -139,35 +143,53 @@ public:
         label_27->setFont(font2);
         label_28 = new QLabel(tab);
         label_28->setObjectName(QString::fromUtf8("label_28"));
-        label_28->setGeometry(QRect(20, 70, 411, 121));
+        label_28->setGeometry(QRect(20, 60, 451, 121));
         QFont font3;
-        font3.setPointSize(10);
+        font3.setPointSize(9);
         label_28->setFont(font3);
         label_28->setWordWrap(true);
-        widget = new QWidget(tab);
-        widget->setObjectName(QString::fromUtf8("widget"));
-        widget->setGeometry(QRect(40, 330, 711, 194));
-        horizontalLayout_9 = new QHBoxLayout(widget);
-        horizontalLayout_9->setObjectName(QString::fromUtf8("horizontalLayout_9"));
-        horizontalLayout_9->setContentsMargins(0, 0, 0, 0);
-        urgentTaskTable = new QTableWidget(widget);
+        layoutWidget = new QWidget(tab);
+        layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
+        layoutWidget->setGeometry(QRect(20, 180, 441, 381));
+        horizontalLayout_3 = new QHBoxLayout(layoutWidget);
+        horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
+        horizontalLayout_3->setContentsMargins(0, 0, 0, 0);
+        urgentTaskTable = new QTableWidget(layoutWidget);
         if (urgentTaskTable->columnCount() < 1)
             urgentTaskTable->setColumnCount(1);
         QTableWidgetItem *__qtablewidgetitem = new QTableWidgetItem();
         urgentTaskTable->setHorizontalHeaderItem(0, __qtablewidgetitem);
         urgentTaskTable->setObjectName(QString::fromUtf8("urgentTaskTable"));
 
-        horizontalLayout_9->addWidget(urgentTaskTable);
+        horizontalLayout_3->addWidget(urgentTaskTable);
 
-        regularTaskTable = new QTableWidget(widget);
+        regularTaskTable = new QTableWidget(layoutWidget);
         if (regularTaskTable->columnCount() < 1)
             regularTaskTable->setColumnCount(1);
         QTableWidgetItem *__qtablewidgetitem1 = new QTableWidgetItem();
         regularTaskTable->setHorizontalHeaderItem(0, __qtablewidgetitem1);
         regularTaskTable->setObjectName(QString::fromUtf8("regularTaskTable"));
 
-        horizontalLayout_9->addWidget(regularTaskTable);
+        horizontalLayout_3->addWidget(regularTaskTable);
 
+        label = new QLabel(tab);
+        label->setObjectName(QString::fromUtf8("label"));
+        label->setGeometry(QRect(580, 210, 181, 181));
+        label->setPixmap(QPixmap(QString::fromUtf8("C:/Users/kambo/OneDrive/Desktop/clear.png")));
+        label->setScaledContents(true);
+        lcdNumber = new QLCDNumber(tab);
+        lcdNumber->setObjectName(QString::fromUtf8("lcdNumber"));
+        lcdNumber->setGeometry(QRect(440, 380, 291, 141));
+        lcdNumber->setLineWidth(0);
+        lcdNumber->setSmallDecimalPoint(false);
+        lcdNumber->setSegmentStyle(QLCDNumber::Flat);
+        lcdNumber->setProperty("intValue", QVariant(31));
+        label_2 = new QLabel(tab);
+        label_2->setObjectName(QString::fromUtf8("label_2"));
+        label_2->setGeometry(QRect(740, 390, 41, 51));
+        QFont font4;
+        font4.setPointSize(36);
+        label_2->setFont(font4);
         tabWidget->addTab(tab, QString());
         tab_3 = new QWidget();
         tab_3->setObjectName(QString::fromUtf8("tab_3"));
@@ -194,7 +216,9 @@ public:
         label_18 = new QLabel(tab_3);
         label_18->setObjectName(QString::fromUtf8("label_18"));
         label_18->setGeometry(QRect(20, 70, 411, 121));
-        label_18->setFont(font3);
+        QFont font5;
+        font5.setPointSize(10);
+        label_18->setFont(font5);
         label_18->setWordWrap(true);
         label_19 = new QLabel(tab_3);
         label_19->setObjectName(QString::fromUtf8("label_19"));
@@ -202,18 +226,18 @@ public:
         label_19->setFont(font2);
         PayEmpButton_2 = new QPushButton(tab_3);
         PayEmpButton_2->setObjectName(QString::fromUtf8("PayEmpButton_2"));
-        PayEmpButton_2->setGeometry(QRect(320, 510, 121, 31));
-        widget1 = new QWidget(tab_3);
-        widget1->setObjectName(QString::fromUtf8("widget1"));
-        widget1->setGeometry(QRect(460, 50, 313, 137));
-        verticalLayout_2 = new QVBoxLayout(widget1);
+        PayEmpButton_2->setGeometry(QRect(280, 510, 161, 31));
+        layoutWidget1 = new QWidget(tab_3);
+        layoutWidget1->setObjectName(QString::fromUtf8("layoutWidget1"));
+        layoutWidget1->setGeometry(QRect(460, 50, 313, 161));
+        verticalLayout_2 = new QVBoxLayout(layoutWidget1);
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
         verticalLayout_2->setContentsMargins(0, 0, 0, 0);
-        label_3 = new QLabel(widget1);
+        label_3 = new QLabel(layoutWidget1);
         label_3->setObjectName(QString::fromUtf8("label_3"));
-        QFont font4;
-        font4.setPointSize(12);
-        label_3->setFont(font4);
+        QFont font6;
+        font6.setPointSize(12);
+        label_3->setFont(font6);
         label_3->setAlignment(Qt::AlignCenter);
 
         verticalLayout_2->addWidget(label_3);
@@ -226,17 +250,17 @@ public:
         horizontalLayout_4->setObjectName(QString::fromUtf8("horizontalLayout_4"));
         verticalLayout_4 = new QVBoxLayout();
         verticalLayout_4->setObjectName(QString::fromUtf8("verticalLayout_4"));
-        label_5 = new QLabel(widget1);
+        label_5 = new QLabel(layoutWidget1);
         label_5->setObjectName(QString::fromUtf8("label_5"));
 
         verticalLayout_4->addWidget(label_5);
 
-        label_6 = new QLabel(widget1);
+        label_6 = new QLabel(layoutWidget1);
         label_6->setObjectName(QString::fromUtf8("label_6"));
 
         verticalLayout_4->addWidget(label_6);
 
-        label_7 = new QLabel(widget1);
+        label_7 = new QLabel(layoutWidget1);
         label_7->setObjectName(QString::fromUtf8("label_7"));
 
         verticalLayout_4->addWidget(label_7);
@@ -246,17 +270,17 @@ public:
 
         verticalLayout_6 = new QVBoxLayout();
         verticalLayout_6->setObjectName(QString::fromUtf8("verticalLayout_6"));
-        lineEditName = new QLineEdit(widget1);
+        lineEditName = new QLineEdit(layoutWidget1);
         lineEditName->setObjectName(QString::fromUtf8("lineEditName"));
 
         verticalLayout_6->addWidget(lineEditName);
 
-        lineEditQuant = new QLineEdit(widget1);
+        lineEditQuant = new QLineEdit(layoutWidget1);
         lineEditQuant->setObjectName(QString::fromUtf8("lineEditQuant"));
 
         verticalLayout_6->addWidget(lineEditQuant);
 
-        lineEditPrice = new QLineEdit(widget1);
+        lineEditPrice = new QLineEdit(layoutWidget1);
         lineEditPrice->setObjectName(QString::fromUtf8("lineEditPrice"));
 
         verticalLayout_6->addWidget(lineEditPrice);
@@ -266,7 +290,7 @@ public:
 
         verticalLayout_3 = new QVBoxLayout();
         verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
-        invButton = new QPushButton(widget1);
+        invButton = new QPushButton(layoutWidget1);
         invButton->setObjectName(QString::fromUtf8("invButton"));
 
         verticalLayout_3->addWidget(invButton);
@@ -320,15 +344,15 @@ public:
         label_17 = new QLabel(tab_2);
         label_17->setObjectName(QString::fromUtf8("label_17"));
         label_17->setGeometry(QRect(20, 70, 411, 121));
-        label_17->setFont(font3);
+        label_17->setFont(font5);
         label_17->setWordWrap(true);
-        widget2 = new QWidget(tab_2);
-        widget2->setObjectName(QString::fromUtf8("widget2"));
-        widget2->setGeometry(QRect(459, 50, 311, 135));
-        verticalLayout_9 = new QVBoxLayout(widget2);
+        layoutWidget2 = new QWidget(tab_2);
+        layoutWidget2->setObjectName(QString::fromUtf8("layoutWidget2"));
+        layoutWidget2->setGeometry(QRect(459, 50, 311, 159));
+        verticalLayout_9 = new QVBoxLayout(layoutWidget2);
         verticalLayout_9->setObjectName(QString::fromUtf8("verticalLayout_9"));
         verticalLayout_9->setContentsMargins(0, 0, 0, 0);
-        label_9 = new QLabel(widget2);
+        label_9 = new QLabel(layoutWidget2);
         label_9->setObjectName(QString::fromUtf8("label_9"));
         label_9->setAlignment(Qt::AlignCenter);
 
@@ -340,17 +364,17 @@ public:
         horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
         verticalLayout_8 = new QVBoxLayout();
         verticalLayout_8->setObjectName(QString::fromUtf8("verticalLayout_8"));
-        label_11 = new QLabel(widget2);
+        label_11 = new QLabel(layoutWidget2);
         label_11->setObjectName(QString::fromUtf8("label_11"));
 
         verticalLayout_8->addWidget(label_11);
 
-        label_12 = new QLabel(widget2);
+        label_12 = new QLabel(layoutWidget2);
         label_12->setObjectName(QString::fromUtf8("label_12"));
 
         verticalLayout_8->addWidget(label_12);
 
-        label_13 = new QLabel(widget2);
+        label_13 = new QLabel(layoutWidget2);
         label_13->setObjectName(QString::fromUtf8("label_13"));
 
         verticalLayout_8->addWidget(label_13);
@@ -360,17 +384,17 @@ public:
 
         verticalLayout_12 = new QVBoxLayout();
         verticalLayout_12->setObjectName(QString::fromUtf8("verticalLayout_12"));
-        lineEditEmployee = new QLineEdit(widget2);
+        lineEditEmployee = new QLineEdit(layoutWidget2);
         lineEditEmployee->setObjectName(QString::fromUtf8("lineEditEmployee"));
 
         verticalLayout_12->addWidget(lineEditEmployee);
 
-        lineEditSalary = new QLineEdit(widget2);
+        lineEditSalary = new QLineEdit(layoutWidget2);
         lineEditSalary->setObjectName(QString::fromUtf8("lineEditSalary"));
 
         verticalLayout_12->addWidget(lineEditSalary);
 
-        lineEditHours = new QLineEdit(widget2);
+        lineEditHours = new QLineEdit(layoutWidget2);
         lineEditHours->setObjectName(QString::fromUtf8("lineEditHours"));
 
         verticalLayout_12->addWidget(lineEditHours);
@@ -381,7 +405,7 @@ public:
 
         horizontalLayout->addLayout(horizontalLayout_2);
 
-        payButton_3 = new QPushButton(widget2);
+        payButton_3 = new QPushButton(layoutWidget2);
         payButton_3->setObjectName(QString::fromUtf8("payButton_3"));
 
         horizontalLayout->addWidget(payButton_3);
@@ -394,14 +418,14 @@ public:
         tab_4->setObjectName(QString::fromUtf8("tab_4"));
         clearButton = new QPushButton(tab_4);
         clearButton->setObjectName(QString::fromUtf8("clearButton"));
-        clearButton->setGeometry(QRect(670, 500, 131, 45));
+        clearButton->setGeometry(QRect(660, 500, 141, 45));
         label_23 = new QLabel(tab_4);
         label_23->setObjectName(QString::fromUtf8("label_23"));
         label_23->setGeometry(QRect(20, 20, 271, 41));
         label_23->setFont(font2);
         label_24 = new QLabel(tab_4);
         label_24->setObjectName(QString::fromUtf8("label_24"));
-        label_24->setGeometry(QRect(20, 70, 411, 121));
+        label_24->setGeometry(QRect(20, 70, 411, 141));
         label_24->setFont(font3);
         label_24->setWordWrap(true);
         tasktable = new QTableWidget(tab_4);
@@ -417,14 +441,14 @@ public:
         tasktable->setGeometry(QRect(0, 220, 801, 281));
         pushButton_2 = new QPushButton(tab_4);
         pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
-        pushButton_2->setGeometry(QRect(500, 500, 171, 45));
-        widget3 = new QWidget(tab_4);
-        widget3->setObjectName(QString::fromUtf8("widget3"));
-        widget3->setGeometry(QRect(460, 50, 311, 136));
-        verticalLayout_10 = new QVBoxLayout(widget3);
+        pushButton_2->setGeometry(QRect(430, 500, 231, 45));
+        layoutWidget3 = new QWidget(tab_4);
+        layoutWidget3->setObjectName(QString::fromUtf8("layoutWidget3"));
+        layoutWidget3->setGeometry(QRect(460, 50, 311, 162));
+        verticalLayout_10 = new QVBoxLayout(layoutWidget3);
         verticalLayout_10->setObjectName(QString::fromUtf8("verticalLayout_10"));
         verticalLayout_10->setContentsMargins(0, 0, 0, 0);
-        label_25 = new QLabel(widget3);
+        label_25 = new QLabel(layoutWidget3);
         label_25->setObjectName(QString::fromUtf8("label_25"));
         label_25->setAlignment(Qt::AlignCenter);
 
@@ -434,12 +458,12 @@ public:
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         horizontalLayout_5 = new QHBoxLayout();
         horizontalLayout_5->setObjectName(QString::fromUtf8("horizontalLayout_5"));
-        label_4 = new QLabel(widget3);
+        label_4 = new QLabel(layoutWidget3);
         label_4->setObjectName(QString::fromUtf8("label_4"));
 
         horizontalLayout_5->addWidget(label_4);
 
-        lineEdit = new QLineEdit(widget3);
+        lineEdit = new QLineEdit(layoutWidget3);
         lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
 
         horizontalLayout_5->addWidget(lineEdit);
@@ -449,12 +473,12 @@ public:
 
         horizontalLayout_8 = new QHBoxLayout();
         horizontalLayout_8->setObjectName(QString::fromUtf8("horizontalLayout_8"));
-        label_8 = new QLabel(widget3);
+        label_8 = new QLabel(layoutWidget3);
         label_8->setObjectName(QString::fromUtf8("label_8"));
 
         horizontalLayout_8->addWidget(label_8);
 
-        lineEditUrgent = new QLineEdit(widget3);
+        lineEditUrgent = new QLineEdit(layoutWidget3);
         lineEditUrgent->setObjectName(QString::fromUtf8("lineEditUrgent"));
 
         horizontalLayout_8->addWidget(lineEditUrgent);
@@ -462,7 +486,7 @@ public:
 
         verticalLayout->addLayout(horizontalLayout_8);
 
-        urgentButton = new QPushButton(widget3);
+        urgentButton = new QPushButton(layoutWidget3);
         urgentButton->setObjectName(QString::fromUtf8("urgentButton"));
 
         verticalLayout->addWidget(urgentButton);
@@ -479,7 +503,7 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 858, 21));
+        menubar->setGeometry(QRect(0, 0, 859, 26));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -499,11 +523,13 @@ public:
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
         label_27->setText(QCoreApplication::translate("MainWindow", "Home", nullptr));
-        label_28->setText(QCoreApplication::translate("MainWindow", "Welcome to Sprout System Management! Current weather is visible on the right. Your pending urgent tasks and regular tasks are below. Click the Inventory, Payroll or Task Manager tabs to navigate through the application.", nullptr));
+        label_28->setText(QCoreApplication::translate("MainWindow", "Welcome to Sprout System Management! Current weather is visible on the bottom right. Your pending urgent tasks and regular tasks are below. Click the Inventory, Payroll or Task Manager tabs to navigate through the application.", nullptr));
         QTableWidgetItem *___qtablewidgetitem = urgentTaskTable->horizontalHeaderItem(0);
         ___qtablewidgetitem->setText(QCoreApplication::translate("MainWindow", "Urgent Tasks", nullptr));
         QTableWidgetItem *___qtablewidgetitem1 = regularTaskTable->horizontalHeaderItem(0);
         ___qtablewidgetitem1->setText(QCoreApplication::translate("MainWindow", "Regular Tasks", nullptr));
+        label->setText(QString());
+        label_2->setText(QCoreApplication::translate("MainWindow", "\302\260", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab), QCoreApplication::translate("MainWindow", "Home", nullptr));
         QTableWidgetItem *___qtablewidgetitem2 = invtable->horizontalHeaderItem(0);
         ___qtablewidgetitem2->setText(QCoreApplication::translate("MainWindow", "Item", nullptr));
