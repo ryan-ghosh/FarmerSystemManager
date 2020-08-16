@@ -30,6 +30,12 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) , ui(new Ui::MainW
     ui->payrolltable->setShowGrid(false);
 
     ui->invtable->resizeColumnsToContents();
+    ui->invtable->resizeRowsToContents();
+
+    ui->urgentTaskTable->resizeRowsToContents();
+    ui->urgentTaskTable->resizeColumnsToContents();
+    ui->regularTaskTable->resizeRowsToContents();
+    ui->regularTaskTable->resizeColumnsToContents();
 
     ui->tasktable->resizeColumnsToContents();
     ui->tasktable->setShowGrid(false);
@@ -121,7 +127,6 @@ void MainWindow::displayTasks() {
     }
 
     QCheckBox * cb1 = new QCheckBox();
-    //QCheckBox * cb2 = new QCheckBox();
     ui->tasktable->setCellWidget(ui->tasktable->rowCount()-1,2,cb1);
     //ui->tasktable->setCellWidget(ui->tasktable->rowCount()-1,3,cb2);
     cb1->setStyleSheet( "text-align: center; margin-left:50%; margin-right:50%;" );
@@ -139,6 +144,10 @@ void MainWindow::displayRegularTasks(int index){
     QTableWidgetItem *in = new QTableWidgetItem(taskManager.tasks[index].first.task, 0);
     ui->regularTaskTable->insertRow( ui->regularTaskTable->rowCount() );
     ui->regularTaskTable->setItem(ui->regularTaskTable->rowCount()-1,0,in);
+    ui->urgentTaskTable->resizeRowsToContents();
+    ui->urgentTaskTable->resizeColumnsToContents();
+    ui->regularTaskTable->resizeRowsToContents();
+    ui->regularTaskTable->resizeColumnsToContents();
     return;
 }
 
@@ -146,6 +155,10 @@ void MainWindow::displayUrgentTasks(int index){
     QTableWidgetItem *in = new QTableWidgetItem(taskManager.tasks[index].first.task, 0);
     ui->urgentTaskTable->insertRow( ui->urgentTaskTable->rowCount() );
     ui->urgentTaskTable->setItem(ui->urgentTaskTable->rowCount()-1,0,in);
+    ui->urgentTaskTable->resizeRowsToContents();
+    ui->urgentTaskTable->resizeColumnsToContents();
+    ui->regularTaskTable->resizeRowsToContents();
+    ui->regularTaskTable->resizeColumnsToContents();
     return;
 }
 
@@ -278,10 +291,15 @@ void MainWindow::displayInv(){
     QTableWidgetItem *ip = new QTableWidgetItem(QString::number(inventory.prices[it->first]), 0);
     QTableWidgetItem *itp = new QTableWidgetItem(QString::number(it->second * inventory.prices[it->first]), 0);
     ui->invtable->insertRow( ui->invtable->rowCount() );
+    QCheckBox * checko = new QCheckBox();
+    ui->invtable->setCellWidget(ui->invtable->rowCount()-1,4,checko);
+    checko->setStyleSheet( "text-align: center; margin-left:50%; margin-right:50%;" );
     ui->invtable->setItem(ui->invtable->rowCount()-1,0,in);
     ui->invtable->setItem(ui->invtable->rowCount()-1,1,iq);
     ui->invtable->setItem(ui->invtable->rowCount()-1,2,ip);
     ui->invtable->setItem(ui->invtable->rowCount()-1,3,itp);
+    ui->invtable->resizeColumnsToContents();
+    ui->invtable->resizeRowsToContents();
     ui->invtable->update();
     it++;
     return;

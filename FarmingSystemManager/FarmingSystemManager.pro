@@ -48,4 +48,9 @@ DISTFILES += \
     icons/weather-storm.png \
     icons/weather-sunny-very-few-clouds.png \
     icons/weather-sunny.png \
-    icons/weather-thundershower.png
+    icons/weather-thundershower.png \
+    icons/sproutlogo.png
+
+
+RESOURCES += \
+    images.qrc

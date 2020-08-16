@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>858</width>
-    <height>700</height>
+    <height>718</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,8 +17,8 @@
    <widget class="QTabWidget" name="tabWidget">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>60</y>
+      <x>20</x>
+      <y>80</y>
       <width>801</width>
       <height>591</height>
      </rect>
@@ -30,7 +30,7 @@
      </font>
     </property>
     <property name="currentIndex">
-     <number>3</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -66,48 +66,74 @@
        <bool>false</bool>
       </property>
      </widget>
-     <widget class="QLabel" name="label">
+     <widget class="QLabel" name="label_27">
       <property name="geometry">
        <rect>
         <x>20</x>
         <y>20</y>
-        <width>81</width>
+        <width>211</width>
         <height>41</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
       <property name="text">
-       <string>Welcome!!</string>
+       <string>Home</string>
       </property>
      </widget>
-     <widget class="QTableWidget" name="urgentTaskTable">
+     <widget class="QLabel" name="label_28">
       <property name="geometry">
        <rect>
-        <x>90</x>
-        <y>80</y>
-        <width>181</width>
-        <height>192</height>
+        <x>20</x>
+        <y>70</y>
+        <width>411</width>
+        <height>121</height>
        </rect>
       </property>
-      <column>
-       <property name="text">
-        <string>Urgent Tasks</string>
-       </property>
-      </column>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Welcome to Sprout System Management! Current weather is visible on the right. Your pending urgent tasks and regular tasks are below. Click the Inventory, Payroll or Task Manager tabs to navigate through the application.</string>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
      </widget>
-     <widget class="QTableWidget" name="regularTaskTable">
+     <widget class="QWidget" name="">
       <property name="geometry">
        <rect>
-        <x>490</x>
-        <y>250</y>
-        <width>211</width>
-        <height>192</height>
+        <x>40</x>
+        <y>330</y>
+        <width>711</width>
+        <height>194</height>
        </rect>
       </property>
-      <column>
-       <property name="text">
-        <string>Regular Tasks</string>
-       </property>
-      </column>
+      <layout class="QHBoxLayout" name="horizontalLayout_9">
+       <item>
+        <widget class="QTableWidget" name="urgentTaskTable">
+         <column>
+          <property name="text">
+           <string>Urgent Tasks</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+       <item>
+        <widget class="QTableWidget" name="regularTaskTable">
+         <column>
+          <property name="text">
+           <string>Regular Tasks</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+      </layout>
      </widget>
     </widget>
     <widget class="QWidget" name="tab_3">
@@ -136,7 +162,7 @@
        <number>0</number>
       </property>
       <property name="columnCount">
-       <number>4</number>
+       <number>5</number>
       </property>
       <column>
        <property name="text">
@@ -150,12 +176,17 @@
       </column>
       <column>
        <property name="text">
-        <string>Unit Price</string>
+        <string>Unit Value</string>
        </property>
       </column>
       <column>
        <property name="text">
-        <string>Total Price</string>
+        <string>Total Value</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Remove</string>
        </property>
       </column>
      </widget>
@@ -168,8 +199,13 @@
         <height>121</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
       <property name="text">
-       <string>&quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.&quot;</string>
+       <string>To add an item to your inventory, fill out the fields on the right and click &quot;ADD&quot;. It will appear in the table below. To remove an item from the inventory, simply check the &quot;Remove&quot; column and click the &quot;Remove Item(s)&quot; button at the bottom.</string>
       </property>
       <property name="wordWrap">
        <bool>true</bool>
@@ -190,7 +226,7 @@
        </font>
       </property>
       <property name="text">
-       <string>Inventory Header</string>
+       <string>Inventory</string>
       </property>
      </widget>
      <widget class="QPushButton" name="PayEmpButton_2">
@@ -198,12 +234,12 @@
        <rect>
         <x>320</x>
         <y>510</y>
-        <width>101</width>
+        <width>121</width>
         <height>31</height>
        </rect>
       </property>
       <property name="text">
-       <string>Remove Item</string>
+       <string>Remove Item(s)</string>
       </property>
      </widget>
      <widget class="QWidget" name="">
@@ -256,7 +292,7 @@
                <item>
                 <widget class="QLabel" name="label_7">
                  <property name="text">
-                  <string>Price:</string>
+                  <string>Value:</string>
                  </property>
                 </widget>
                </item>
@@ -380,7 +416,7 @@
        </font>
       </property>
       <property name="text">
-       <string>Payroll Header</string>
+       <string>Payroll</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_17">
@@ -392,8 +428,13 @@
         <height>121</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
       <property name="text">
-       <string>&quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.&quot;</string>
+       <string>Fill out the fields on the right (name, hourly rate and hours) to add an employee. On payday, simply click the pay button (after paying your employees) to set hours and balance owed to 0.</string>
       </property>
       <property name="wordWrap">
        <bool>true</bool>
@@ -507,7 +548,7 @@
        </font>
       </property>
       <property name="text">
-       <string>Task Manager Header</string>
+       <string>Task Manager</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_24">
@@ -519,8 +560,13 @@
         <height>121</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
       <property name="text">
-       <string>&quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.&quot;</string>
+       <string>Fill out the fields on the right to add a task (don't forget to assign its urgency). The task will appear in the table below and on the Home Screen in the location respective to its urgency. If you wish to remove a task(s), check the &quot;remove&quot; column and click the &quot;Remove Selected Tasks&quot; button at the bottom. To remove all tasks from the home screen and the table, click &quot;Clear All Tasks&quot;.</string>
       </property>
       <property name="wordWrap">
        <bool>true</bool>
@@ -631,26 +677,23 @@
      </widget>
     </widget>
    </widget>
-   <widget class="QLabel" name="label_2">
+   <widget class="QLabel" name="label_26">
     <property name="geometry">
      <rect>
-      <x>30</x>
+      <x>350</x>
       <y>20</y>
-      <width>801</width>
-      <height>41</height>
+      <width>147</width>
+      <height>54</height>
      </rect>
     </property>
-    <property name="font">
-     <font>
-      <family>Segoe UI</family>
-      <pointsize>20</pointsize>
-     </font>
-    </property>
     <property name="text">
-     <string>Sprout</string>
+     <string/>
     </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
+    <property name="pixmap">
+     <pixmap>icons/sproutlogo.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
     </property>
    </widget>
   </widget>
