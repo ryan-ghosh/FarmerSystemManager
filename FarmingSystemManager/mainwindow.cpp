@@ -25,7 +25,16 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) , ui(new Ui::MainW
     ui->setupUi(this);
     createTabMenu();
     ui->payrolltable->resizeColumnsToContents();
+    ui->payrolltable->resizeRowsToContents();
+    ui->payrolltable->verticalHeader()->setVisible(false);
+    ui->payrolltable->setShowGrid(false);
+
     ui->invtable->resizeColumnsToContents();
+
+    ui->tasktable->resizeColumnsToContents();
+    ui->tasktable->setShowGrid(false);
+    ui->tasktable->verticalHeader()->setVisible(false);
+
 }
 
 MainWindow::~MainWindow()
@@ -75,25 +84,57 @@ void MainWindow::on_urgentButton_clicked()
     ui->lineEditUrgent->clear();
 }
 
+
+int i = 0;
 void MainWindow::displayTasks() {
     int taskLength = (int)taskManager.tasks.size();
 
-    if (not ui->textBrowser->toPlainText().isEmpty()){
+    /*if (not ui->textBrowser->toPlainText().isEmpty()){
         ui->textBrowser->clear();           //clear textBrowser if not empty
-    }
+    }*/
 
     for (int i = 0; i < taskLength; i++) {
+
         if (taskManager.tasks[i].second==1 && i==taskLength-1){
             displayUrgentTasks(i);
+
         }else if(taskManager.tasks[i].second==0 && i==taskLength-1){
             displayRegularTasks(i);
+
         }
-        ui->textBrowser->append(QString::number(i + 1) + ". " + taskManager.tasks[taskLength - i - 1].first.task);
+        // ui->textBrowser->append(QString::number(i + 1) + ". " + taskManager.tasks[taskLength - i - 1].first.task);
+
         qDebug() << taskManager.tasks[taskLength - i - 1].second;
     }
 
+    if(ui->tasktable->rowCount() == 0){
+        i = 0;
+    }
+
+    ui->tasktable->insertRow( ui->tasktable->rowCount() );
+    ui->tasktable->setItem(ui->tasktable->rowCount()-1,0, new QTableWidgetItem(taskManager.tasks[i].first.task));
+
+    if (taskManager.tasks[i].second==1){
+        ui->tasktable->setItem(ui->tasktable->rowCount()-1,1, new QTableWidgetItem("Y")); //IF urgent
+    } else if(taskManager.tasks[i].second==0){
+        ui->tasktable->setItem(ui->tasktable->rowCount()-1,1, new QTableWidgetItem("N")); //IF not urgent
+    }
+
+    QCheckBox * cb1 = new QCheckBox();
+    QCheckBox * cb2 = new QCheckBox();
+    ui->tasktable->setCellWidget(ui->tasktable->rowCount()-1,2,cb1);
+    ui->tasktable->setCellWidget(ui->tasktable->rowCount()-1,3,cb2);
+    cb1->setStyleSheet( "text-align: center; margin-left:50%; margin-right:50%;" );
+    cb2->setStyleSheet( "text-align: center; margin-left:50%; margin-right:50%;" );
+
+    ui->tasktable->resizeColumnsToContents();
+    ui->tasktable->resizeRowsToContents();
+    ui->tasktable->update();
+    i++;
+
     return;
 }
+
 void MainWindow::displayRegularTasks(int index){
     QTableWidgetItem *in = new QTableWidgetItem(taskManager.tasks[index].first.task, 0);
     ui->regularTaskTable->insertRow( ui->regularTaskTable->rowCount() );
@@ -113,7 +154,13 @@ void MainWindow::clearTasks() {
         taskManager.tasks.clear();
     }
 
-    ui->textBrowser->clear();
+    // ui->textBrowser->clear();
+    ui->tasktable->setRowCount(0);
+    ui->urgentTaskTable->setRowCount(0);
+    ui->regularTaskTable->setRowCount(0);
+    ui->urgentTaskTable->update();
+    ui->regularTaskTable->update();
+    ui->tasktable->update();
     return;
 }
 
@@ -232,9 +279,10 @@ void MainWindow::displayPayroll(){
     QCheckBox * cb = new QCheckBox();
     ui->payrolltable->setCellWidget(ui->payrolltable->rowCount()-1,4,cb);
     cb->setStyleSheet( "text-align: center; margin-left:50%; margin-right:50%;" );
-    if (cb->isChecked() == 0) {qDebug() << "ok";}
+    //if (cb->isChecked() == 0) {qDebug() << "ok";}
 
     ui->payrolltable->resizeColumnsToContents();
+    ui->payrolltable->resizeRowsToContents();
     ui->payrolltable->update();
     empcount++;
     return;

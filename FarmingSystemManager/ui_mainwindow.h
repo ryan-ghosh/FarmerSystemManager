@@ -22,7 +22,6 @@
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QTableWidget>
-#include <QtWidgets/QTextBrowser>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
@@ -82,7 +81,9 @@ public:
     QPushButton *clearButton;
     QLabel *label_23;
     QLabel *label_24;
-    QTextBrowser *textBrowser;
+    QTableWidget *tasktable;
+    QPushButton *completebutton;
+    QPushButton *pushButton_2;
     QWidget *widget2;
     QVBoxLayout *verticalLayout_10;
     QLabel *label_25;
@@ -280,6 +281,15 @@ public:
         payrolltable->setHorizontalHeaderItem(4, __qtablewidgetitem10);
         payrolltable->setObjectName(QString::fromUtf8("payrolltable"));
         payrolltable->setGeometry(QRect(0, 220, 801, 281));
+        QSizePolicy sizePolicy1(QSizePolicy::Maximum, QSizePolicy::Expanding);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(payrolltable->sizePolicy().hasHeightForWidth());
+        payrolltable->setSizePolicy(sizePolicy1);
+        payrolltable->setGridStyle(Qt::SolidLine);
+        payrolltable->horizontalHeader()->setCascadingSectionResizes(true);
+        payrolltable->horizontalHeader()->setStretchLastSection(false);
+        payrolltable->verticalHeader()->setCascadingSectionResizes(false);
         label_10 = new QLabel(tab_2);
         label_10->setObjectName(QString::fromUtf8("label_10"));
         label_10->setGeometry(QRect(20, 20, 181, 41));
@@ -360,7 +370,7 @@ public:
         tab_4->setObjectName(QString::fromUtf8("tab_4"));
         clearButton = new QPushButton(tab_4);
         clearButton->setObjectName(QString::fromUtf8("clearButton"));
-        clearButton->setGeometry(QRect(190, 350, 141, 41));
+        clearButton->setGeometry(QRect(670, 500, 131, 45));
         label_23 = new QLabel(tab_4);
         label_23->setObjectName(QString::fromUtf8("label_23"));
         label_23->setGeometry(QRect(20, 20, 271, 41));
@@ -369,9 +379,25 @@ public:
         label_24->setObjectName(QString::fromUtf8("label_24"));
         label_24->setGeometry(QRect(20, 70, 411, 121));
         label_24->setWordWrap(true);
-        textBrowser = new QTextBrowser(tab_4);
-        textBrowser->setObjectName(QString::fromUtf8("textBrowser"));
-        textBrowser->setGeometry(QRect(0, 220, 801, 281));
+        tasktable = new QTableWidget(tab_4);
+        if (tasktable->columnCount() < 4)
+            tasktable->setColumnCount(4);
+        QTableWidgetItem *__qtablewidgetitem11 = new QTableWidgetItem();
+        tasktable->setHorizontalHeaderItem(0, __qtablewidgetitem11);
+        QTableWidgetItem *__qtablewidgetitem12 = new QTableWidgetItem();
+        tasktable->setHorizontalHeaderItem(1, __qtablewidgetitem12);
+        QTableWidgetItem *__qtablewidgetitem13 = new QTableWidgetItem();
+        tasktable->setHorizontalHeaderItem(2, __qtablewidgetitem13);
+        QTableWidgetItem *__qtablewidgetitem14 = new QTableWidgetItem();
+        tasktable->setHorizontalHeaderItem(3, __qtablewidgetitem14);
+        tasktable->setObjectName(QString::fromUtf8("tasktable"));
+        tasktable->setGeometry(QRect(0, 220, 801, 281));
+        completebutton = new QPushButton(tab_4);
+        completebutton->setObjectName(QString::fromUtf8("completebutton"));
+        completebutton->setGeometry(QRect(470, 500, 201, 45));
+        pushButton_2 = new QPushButton(tab_4);
+        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
+        pushButton_2->setGeometry(QRect(300, 500, 171, 45));
         widget2 = new QWidget(tab_4);
         widget2->setObjectName(QString::fromUtf8("widget2"));
         widget2->setGeometry(QRect(460, 50, 311, 136));
@@ -446,7 +472,7 @@ public:
         QObject::connect(invButton, SIGNAL(clicked()), invtable, SLOT(update()));
         QObject::connect(payButton_3, SIGNAL(clicked()), payrolltable, SLOT(update()));
 
-        tabWidget->setCurrentIndex(1);
+        tabWidget->setCurrentIndex(3);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -500,6 +526,16 @@ public:
         clearButton->setText(QCoreApplication::translate("MainWindow", "Clear All Tasks", nullptr));
         label_23->setText(QCoreApplication::translate("MainWindow", "Task Manager Header", nullptr));
         label_24->setText(QCoreApplication::translate("MainWindow", "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\"", nullptr));
+        QTableWidgetItem *___qtablewidgetitem11 = tasktable->horizontalHeaderItem(0);
+        ___qtablewidgetitem11->setText(QCoreApplication::translate("MainWindow", "Task Name", nullptr));
+        QTableWidgetItem *___qtablewidgetitem12 = tasktable->horizontalHeaderItem(1);
+        ___qtablewidgetitem12->setText(QCoreApplication::translate("MainWindow", "Urgency", nullptr));
+        QTableWidgetItem *___qtablewidgetitem13 = tasktable->horizontalHeaderItem(2);
+        ___qtablewidgetitem13->setText(QCoreApplication::translate("MainWindow", "Complete", nullptr));
+        QTableWidgetItem *___qtablewidgetitem14 = tasktable->horizontalHeaderItem(3);
+        ___qtablewidgetitem14->setText(QCoreApplication::translate("MainWindow", "Remove", nullptr));
+        completebutton->setText(QCoreApplication::translate("MainWindow", "Mark Task(s) as Complete", nullptr));
+        pushButton_2->setText(QCoreApplication::translate("MainWindow", "Remove Selected Tasks", nullptr));
         label_25->setText(QCoreApplication::translate("MainWindow", "Add a Task:", nullptr));
         label_4->setText(QCoreApplication::translate("MainWindow", "Task Name:   ", nullptr));
         lineEdit->setText(QString());

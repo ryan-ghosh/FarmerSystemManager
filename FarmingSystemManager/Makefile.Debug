@@ -534,10 +534,6 @@ debug/mainwindow.o: mainwindow.cpp mainwindow.h \
 		C:/Qt/5.15.0/mingw81_64/include/QtWidgets/QTableWidget \
 		C:/Qt/5.15.0/mingw81_64/include/QtWidgets/qtablewidget.h \
 		C:/Qt/5.15.0/mingw81_64/include/QtWidgets/qtableview.h \
-		C:/Qt/5.15.0/mingw81_64/include/QtWidgets/QTextBrowser \
-		C:/Qt/5.15.0/mingw81_64/include/QtWidgets/qtextbrowser.h \
-		C:/Qt/5.15.0/mingw81_64/include/QtWidgets/qtextedit.h \
-		C:/Qt/5.15.0/mingw81_64/include/QtGui/qtextdocument.h \
 		C:/Qt/5.15.0/mingw81_64/include/QtWidgets/QVBoxLayout \
 		C:/Qt/5.15.0/mingw81_64/include/QtWidgets/QWidget \
 		ReqClasses.cpp \
