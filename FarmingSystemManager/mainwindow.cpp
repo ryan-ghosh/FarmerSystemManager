@@ -104,7 +104,7 @@ void MainWindow::displayTasks() {
         }
         // ui->textBrowser->append(QString::number(i + 1) + ". " + taskManager.tasks[taskLength - i - 1].first.task);
 
-        qDebug() << taskManager.tasks[taskLength - i - 1].second;
+        //qDebug() << taskManager.tasks[taskLength - i - 1].second;
     }
 
     if(ui->tasktable->rowCount() == 0){
@@ -121,11 +121,11 @@ void MainWindow::displayTasks() {
     }
 
     QCheckBox * cb1 = new QCheckBox();
-    QCheckBox * cb2 = new QCheckBox();
+    //QCheckBox * cb2 = new QCheckBox();
     ui->tasktable->setCellWidget(ui->tasktable->rowCount()-1,2,cb1);
-    ui->tasktable->setCellWidget(ui->tasktable->rowCount()-1,3,cb2);
+    //ui->tasktable->setCellWidget(ui->tasktable->rowCount()-1,3,cb2);
     cb1->setStyleSheet( "text-align: center; margin-left:50%; margin-right:50%;" );
-    cb2->setStyleSheet( "text-align: center; margin-left:50%; margin-right:50%;" );
+    //cb2->setStyleSheet( "text-align: center; margin-left:50%; margin-right:50%;" );
 
     ui->tasktable->resizeColumnsToContents();
     ui->tasktable->resizeRowsToContents();
@@ -161,6 +161,59 @@ void MainWindow::clearTasks() {
     ui->urgentTaskTable->update();
     ui->regularTaskTable->update();
     ui->tasktable->update();
+    return;
+}
+
+void MainWindow::on_pushButton_2_clicked()
+{
+    bool all_removed = false;
+    int mark = -1;
+    while (all_removed != true){
+        for (int i = 0 ; i < ui->tasktable->rowCount() ; i++){
+            QCheckBox *box = new QCheckBox();
+            box = (QCheckBox*)ui->tasktable->cellWidget(i,2);
+            if (box->isChecked()){
+                all_removed = 0;
+                mark = i;
+                break;
+            }
+        }
+        if (mark != -1){
+
+            QTableWidgetItem *ure = ui->tasktable->item(mark,0);
+            QString urestr = ure->text();
+            QTableWidgetItem *um;
+            for(int i = 0 ; i < ui->urgentTaskTable->rowCount() ; ++i ){
+                 um = ui->urgentTaskTable->item(i,0);
+                 if (um->text() == ure->text()){
+                     //std::cout << "match!" << std::endl;
+                     ui->urgentTaskTable->removeRow(i);
+                     ui->urgentTaskTable->update();
+                 }
+            }
+
+            for(int i = 0 ; i < ui->regularTaskTable->rowCount() ; ++i ){
+                 um = ui->regularTaskTable->item(i,0);
+                 if (um->text() == ure->text()){
+                     //std::cout << "match!" << std::endl;
+                     ui->regularTaskTable->removeRow(i);
+                     ui->regularTaskTable->update();
+                 }
+            }
+
+            //qDebug() << urestr;
+
+
+            ui->tasktable->removeRow(mark);
+            mark = -1;
+        } else {
+            all_removed = true;
+        }
+    }
+
+
+
+
     return;
 }
 
@@ -315,3 +368,5 @@ void MainWindow::on_PayEmpButton_clicked()
     }
     return;
 }
+
+

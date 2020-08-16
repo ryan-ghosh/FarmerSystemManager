@@ -547,32 +547,14 @@
       </column>
       <column>
        <property name="text">
-        <string>Complete</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
         <string>Remove</string>
        </property>
       </column>
      </widget>
-     <widget class="QPushButton" name="completebutton">
-      <property name="geometry">
-       <rect>
-        <x>470</x>
-        <y>500</y>
-        <width>201</width>
-        <height>45</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Mark Task(s) as Complete</string>
-      </property>
-     </widget>
      <widget class="QPushButton" name="pushButton_2">
       <property name="geometry">
        <rect>
-        <x>300</x>
+        <x>500</x>
         <y>500</y>
         <width>171</width>
         <height>45</height>

@@ -82,7 +82,6 @@ public:
     QLabel *label_23;
     QLabel *label_24;
     QTableWidget *tasktable;
-    QPushButton *completebutton;
     QPushButton *pushButton_2;
     QWidget *widget2;
     QVBoxLayout *verticalLayout_10;
@@ -380,24 +379,19 @@ public:
         label_24->setGeometry(QRect(20, 70, 411, 121));
         label_24->setWordWrap(true);
         tasktable = new QTableWidget(tab_4);
-        if (tasktable->columnCount() < 4)
-            tasktable->setColumnCount(4);
+        if (tasktable->columnCount() < 3)
+            tasktable->setColumnCount(3);
         QTableWidgetItem *__qtablewidgetitem11 = new QTableWidgetItem();
         tasktable->setHorizontalHeaderItem(0, __qtablewidgetitem11);
         QTableWidgetItem *__qtablewidgetitem12 = new QTableWidgetItem();
         tasktable->setHorizontalHeaderItem(1, __qtablewidgetitem12);
         QTableWidgetItem *__qtablewidgetitem13 = new QTableWidgetItem();
         tasktable->setHorizontalHeaderItem(2, __qtablewidgetitem13);
-        QTableWidgetItem *__qtablewidgetitem14 = new QTableWidgetItem();
-        tasktable->setHorizontalHeaderItem(3, __qtablewidgetitem14);
         tasktable->setObjectName(QString::fromUtf8("tasktable"));
         tasktable->setGeometry(QRect(0, 220, 801, 281));
-        completebutton = new QPushButton(tab_4);
-        completebutton->setObjectName(QString::fromUtf8("completebutton"));
-        completebutton->setGeometry(QRect(470, 500, 201, 45));
         pushButton_2 = new QPushButton(tab_4);
         pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
-        pushButton_2->setGeometry(QRect(300, 500, 171, 45));
+        pushButton_2->setGeometry(QRect(500, 500, 171, 45));
         widget2 = new QWidget(tab_4);
         widget2->setObjectName(QString::fromUtf8("widget2"));
         widget2->setGeometry(QRect(460, 50, 311, 136));
@@ -531,10 +525,7 @@ public:
         QTableWidgetItem *___qtablewidgetitem12 = tasktable->horizontalHeaderItem(1);
         ___qtablewidgetitem12->setText(QCoreApplication::translate("MainWindow", "Urgency", nullptr));
         QTableWidgetItem *___qtablewidgetitem13 = tasktable->horizontalHeaderItem(2);
-        ___qtablewidgetitem13->setText(QCoreApplication::translate("MainWindow", "Complete", nullptr));
-        QTableWidgetItem *___qtablewidgetitem14 = tasktable->horizontalHeaderItem(3);
-        ___qtablewidgetitem14->setText(QCoreApplication::translate("MainWindow", "Remove", nullptr));
-        completebutton->setText(QCoreApplication::translate("MainWindow", "Mark Task(s) as Complete", nullptr));
+        ___qtablewidgetitem13->setText(QCoreApplication::translate("MainWindow", "Remove", nullptr));
         pushButton_2->setText(QCoreApplication::translate("MainWindow", "Remove Selected Tasks", nullptr));
         label_25->setText(QCoreApplication::translate("MainWindow", "Add a Task:", nullptr));
         label_4->setText(QCoreApplication::translate("MainWindow", "Task Name:   ", nullptr));
