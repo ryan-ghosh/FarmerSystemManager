@@ -388,3 +388,27 @@ void MainWindow::on_PayEmpButton_clicked()
 }
 
 
+
+void MainWindow::on_invremove_clicked()
+{
+    bool all_removed = false;
+    int mark = -1;
+    while (all_removed != true){
+        for (int i = 0 ; i < ui->invtable->rowCount() ; i++){
+            QCheckBox *box = new QCheckBox();
+            box = (QCheckBox*)ui->invtable->cellWidget(i,4);
+            if (box->isChecked()){
+                all_removed = 0;
+                mark = i;
+                break;
+            }
+        }
+        if (mark != -1){
+            ui->invtable->removeRow(mark);
+            mark = -1;
+        } else {
+            all_removed = true;
+        }
+    }
+    return;
+}

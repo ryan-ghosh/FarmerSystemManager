@@ -30,7 +30,7 @@
      </font>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -148,7 +148,7 @@
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>C:/Users/kambo/OneDrive/Desktop/clear.png</pixmap>
+       <pixmap>../../../../kambo/OneDrive/Desktop/clear.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
@@ -288,7 +288,7 @@
        <string>Inventory</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="PayEmpButton_2">
+     <widget class="QPushButton" name="invremove">
       <property name="geometry">
        <rect>
         <x>280</x>
@@ -762,7 +762,7 @@
      <x>0</x>
      <y>0</y>
      <width>859</width>
-     <height>26</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>

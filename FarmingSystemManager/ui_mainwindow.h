@@ -48,7 +48,7 @@ public:
     QTableWidget *invtable;
     QLabel *label_18;
     QLabel *label_19;
-    QPushButton *PayEmpButton_2;
+    QPushButton *invremove;
     QWidget *layoutWidget1;
     QVBoxLayout *verticalLayout_2;
     QLabel *label_3;
@@ -175,7 +175,7 @@ public:
         label = new QLabel(tab);
         label->setObjectName(QString::fromUtf8("label"));
         label->setGeometry(QRect(580, 210, 181, 181));
-        label->setPixmap(QPixmap(QString::fromUtf8("C:/Users/kambo/OneDrive/Desktop/clear.png")));
+        label->setPixmap(QPixmap(QString::fromUtf8("../../../../kambo/OneDrive/Desktop/clear.png")));
         label->setScaledContents(true);
         lcdNumber = new QLCDNumber(tab);
         lcdNumber->setObjectName(QString::fromUtf8("lcdNumber"));
@@ -224,9 +224,9 @@ public:
         label_19->setObjectName(QString::fromUtf8("label_19"));
         label_19->setGeometry(QRect(20, 20, 211, 41));
         label_19->setFont(font2);
-        PayEmpButton_2 = new QPushButton(tab_3);
-        PayEmpButton_2->setObjectName(QString::fromUtf8("PayEmpButton_2"));
-        PayEmpButton_2->setGeometry(QRect(280, 510, 161, 31));
+        invremove = new QPushButton(tab_3);
+        invremove->setObjectName(QString::fromUtf8("invremove"));
+        invremove->setGeometry(QRect(280, 510, 161, 31));
         layoutWidget1 = new QWidget(tab_3);
         layoutWidget1->setObjectName(QString::fromUtf8("layoutWidget1"));
         layoutWidget1->setGeometry(QRect(460, 50, 313, 161));
@@ -503,7 +503,7 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 859, 26));
+        menubar->setGeometry(QRect(0, 0, 859, 21));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -513,7 +513,7 @@ public:
         QObject::connect(invButton, SIGNAL(clicked()), invtable, SLOT(update()));
         QObject::connect(payButton_3, SIGNAL(clicked()), payrolltable, SLOT(update()));
 
-        tabWidget->setCurrentIndex(0);
+        tabWidget->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -543,7 +543,7 @@ public:
         ___qtablewidgetitem6->setText(QCoreApplication::translate("MainWindow", "Remove", nullptr));
         label_18->setText(QCoreApplication::translate("MainWindow", "To add an item to your inventory, fill out the fields on the right and click \"ADD\". It will appear in the table below. To remove an item from the inventory, simply check the \"Remove\" column and click the \"Remove Item(s)\" button at the bottom.", nullptr));
         label_19->setText(QCoreApplication::translate("MainWindow", "Inventory", nullptr));
-        PayEmpButton_2->setText(QCoreApplication::translate("MainWindow", "Remove Item(s)", nullptr));
+        invremove->setText(QCoreApplication::translate("MainWindow", "Remove Item(s)", nullptr));
         label_3->setText(QCoreApplication::translate("MainWindow", "Add an Item:", nullptr));
         label_5->setText(QCoreApplication::translate("MainWindow", "Item Name:", nullptr));
         label_6->setText(QCoreApplication::translate("MainWindow", "Quantity:", nullptr));
